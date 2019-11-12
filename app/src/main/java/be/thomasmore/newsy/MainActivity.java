@@ -11,8 +11,15 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ListView;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
+
+    List<Artikel> artikels = new ArrayList<Artikel>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,16 +27,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        vulArtikels();
+        toonArtikels();
     }
+
+    private void toonArtikels() {
+        ArtikelAdapter artikelAdapter = new ArtikelAdapter(getApplicationContext(),artikels);
+        final ListView listViewArtikels = (ListView) findViewById(R.id.listViewArtikels);
+        listViewArtikels.setAdapter(artikelAdapter);
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -51,5 +58,18 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void vulArtikels() {
+        artikels.add(new Artikel("Animal Resistance reageert op kritiek na actie bij foie gras-producent : “De mortaliteit ligt sowieso hoog”",
+                "https://news.google.com/__i/rss/rd/articles/CBMiMmh0dHBzOi8vd3d3Lm5pZXV3c2JsYWQuYmUvY250L2RtZjIwMTkxMTEyXzA0NzExNjc50gEA?oc=5",
+                new Date(2019, 11, 12),
+                "Het Nieuwsblad",
+                "https://www.nieuwsblad.be"));
+        artikels.add(new Artikel("Vlaamse regering wil beter overzicht van subsidies: \"Meer transparantie en makkelijker bijsturen\"","https://news.google.com/__i/rss/rd/articles/CBMiZ2h0dHBzOi8vd3d3LnZydC5iZS92cnRud3MvbmwvMjAxOS8xMS8xMi92bGFhbXNlLXJlZ2VyaW5nLXdpbC1iZXRlci1vdmVyemljaHQtdmFuLXN1YnNpZGllcy1tZWVyLXRyYW5zcC_SAQA?oc=5",
+                new Date(2019,11,12),
+                "VRT NWS",
+                "https://www.vrt.be"
+                ));
     }
 }
