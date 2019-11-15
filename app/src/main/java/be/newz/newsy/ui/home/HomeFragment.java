@@ -19,6 +19,8 @@ import java.util.List;
 
 import be.newz.newsy.Article;
 import be.newz.newsy.ArticleAdapter;
+import be.newz.newsy.HttpReader;
+import be.newz.newsy.JsonHelper;
 import be.newz.newsy.R;
 
 public class HomeFragment extends Fragment {
@@ -32,11 +34,14 @@ public class HomeFragment extends Fragment {
                 ViewModelProviders.of(this).get(HomeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_home, container, false);
 
-        articles = homeViewModel.getArticles();
+        //articles = homeViewModel.getArticles();
+        getArticles(root);
 
-        final ListView listViewArtikels = (ListView) root.findViewById(R.id.listViewArticles);
+
+      /*  final ListView listViewArtikels = (ListView) root.findViewById(R.id.listViewArticles);
         ArticleAdapter artikelAdapter = new ArticleAdapter(this.getContext(), articles);
-        listViewArtikels.setAdapter(artikelAdapter);
+        listViewArtikels.setAdapter(artikelAdapter);*/
+
 //        homeViewModel.getText().observe(this, new Observer<String>() {
 //            @Override
 //            public void onChanged(@Nullable String s) {
@@ -44,6 +49,22 @@ public class HomeFragment extends Fragment {
 //            }
 //        });
         return root;
+    }
+
+   public void getArticles(final View root) {
+        HttpReader httpReader = new HttpReader();
+        httpReader.setOnResultReadyListener(new HttpReader.OnResultReadyListener() {
+            @Override
+            public void resultReady(String result) {
+                JsonHelper jsonHelper = new JsonHelper();
+                articles = jsonHelper.getArticles(result);
+
+                final ListView listViewArtikels = (ListView) root.findViewById(R.id.listViewArticles);
+                ArticleAdapter artikelAdapter = new ArticleAdapter(getContext(), articles);
+                listViewArtikels.setAdapter(artikelAdapter);
+            }
+        });
+        httpReader.execute("https://gnews.io/api/v3/top-news?country=be&lang=nl&token=f8437c31cb1a27be78ccbd616bc732ec");
     }
 
 
