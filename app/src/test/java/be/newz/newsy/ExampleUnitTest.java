@@ -1,4 +1,4 @@
-package be.thomasmore.newsy;
+package be.newz.newsy;
 
 import org.junit.Test;
 

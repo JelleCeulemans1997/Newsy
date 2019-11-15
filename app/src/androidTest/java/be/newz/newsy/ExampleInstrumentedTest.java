@@ -1,4 +1,4 @@
-package be.thomasmore.newsy;
+package be.newz.newsy;
 
 import android.content.Context;
 
@@ -22,6 +22,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
 
-        assertEquals("be.thomasmore.newsy", appContext.getPackageName());
+        assertEquals("be.newz.newsy", appContext.getPackageName());
     }
 }

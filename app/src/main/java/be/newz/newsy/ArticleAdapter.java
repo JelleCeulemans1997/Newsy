@@ -1,4 +1,4 @@
-package be.thomasmore.newsy;
+package be.newz.newsy;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,13 +7,13 @@ import android.view.ViewGroup;
 import android.widget.*;
 import java.util.List;
 
-public class ArtikelAdapter extends ArrayAdapter<Artikel> {
+public class ArticleAdapter extends ArrayAdapter<Article> {
 
     private final Context context;
-    private final List<Artikel> values;
+    private final List<Article> values;
 
-    public ArtikelAdapter(Context context, List<Artikel> values) {
-        super(context, R.layout.artikellistviewitem, values);
+    public ArticleAdapter(Context context, List<Article> values) {
+        super(context, R.layout.articlelistviewitem, values);
         this.context = context;
         this.values = values;
     }
@@ -23,14 +23,14 @@ public class ArtikelAdapter extends ArrayAdapter<Artikel> {
         LayoutInflater inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-        View rowView = inflater.inflate(R.layout.artikellistviewitem, parent, false);
+        View rowView = inflater.inflate(R.layout.articlelistviewitem, parent, false);
 
-        final TextView textViewTitel = (TextView) rowView.findViewById(R.id.titel);
-        final TextView textViewDatum = (TextView) rowView.findViewById(R.id.datum);
+        final TextView textViewTitel = (TextView) rowView.findViewById(R.id.title);
+        final TextView textViewDatum = (TextView) rowView.findViewById(R.id.date);
         final TextView textViewSource = (TextView) rowView.findViewById(R.id.source);
         final TextView textViewSourceUrl = (TextView) rowView.findViewById(R.id.sourceUrl);
 
-        textViewTitel.setText(values.get(position).getTitel());
+        textViewTitel.setText(values.get(position).getTitle());
         textViewDatum.setText(values.get(position).getPublished().toString());
         textViewSource.setText(values.get(position).getSource());
         textViewSourceUrl.setText(values.get(position).getSourceUrl());

@@ -1,31 +1,31 @@
-package be.thomasmore.newsy;
+package be.newz.newsy;
 
 import java.util.Date;
 
-public class Artikel {
-    public String titel;
+public class Article {
+    public String title;
     public String url;
     public Date published;
     public String source;
     public String sourceUrl;
 
-    public Artikel() {
+    public Article() {
     }
 
-    public Artikel(String titel, String url, Date published, String source, String sourceUrl) {
-        this.titel = titel;
+    public Article(String title, String url, Date published, String source, String sourceUrl) {
+        this.title = title;
         this.url = url;
         this.published = published;
         this.source = source;
         this.sourceUrl = sourceUrl;
     }
 
-    public String getTitel() {
-        return titel;
+    public String getTitle() {
+        return title;
     }
 
-    public void setTitel(String titel) {
-        this.titel = titel;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getUrl() {
@@ -59,8 +59,9 @@ public class Artikel {
     public void setSourceUrl(String sourceUrl) {
         this.sourceUrl = sourceUrl;
     }
+
     @Override
     public String toString() {
-        return titel;
+        return title;
     }
 }
