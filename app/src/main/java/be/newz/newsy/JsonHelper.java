@@ -18,6 +18,9 @@ public class JsonHelper {
         try {
             JSONObject jsonObject = new JSONObject(jsonTekst);
             JSONArray jsonArrayArticles = jsonObject.getJSONArray("articles");
+            //FIXME
+            //Error when the device's internet connection is turned off!
+            //Show popup when the app is booting and the internet connectivity is turned off (not before this part, but before executing Newsy code)
             for (int i = 0; i < jsonArrayArticles.length(); i++) {
                 JSONObject jsonObjectArticle = jsonArrayArticles.getJSONObject(i);
                 Article article = new Article();
