@@ -5,8 +5,9 @@
     android:padding="4dp">
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/saved"
         android:orientation="vertical">
 
         <TextView
@@ -47,4 +48,11 @@
                 android:layout_height="wrap_content" />
         </LinearLayout>
     </LinearLayout>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/saved"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/vinkjeuit"
+        />
 </RelativeLayout>
