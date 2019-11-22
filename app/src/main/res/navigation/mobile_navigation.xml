@@ -24,10 +24,10 @@
         tools:layout="@layout/fragment_saved" />
 
     <fragment
-        android:id="@+id/nav_tools"
-        android:name="be.newz.newsy.ui.tools.ToolsFragment"
-        android:label="@string/menu_tools"
-        tools:layout="@layout/fragment_tools" />
+        android:id="@+id/nav_preferences"
+        android:name="be.newz.newsy.ui.preferences.PreferencensFragment"
+        android:label="@string/menu_preferences"
+        tools:layout="@layout/fragment_preferences" />
 
     <fragment
         android:id="@+id/nav_share"
