@@ -1,14 +1,13 @@
-package be.newz.newsy.ui.saved;
+package be.newz.newsy.ui.help;
 
-import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class SavedViewModel extends ViewModel {
+public class HelpViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public SavedViewModel() {
+    public HelpViewModel() {
         //mText = new MutableLiveData<>();
         //mText.setValue("This is slideshow fragment");
     }

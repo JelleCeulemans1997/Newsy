@@ -18,27 +18,21 @@
         tools:layout="@layout/fragment_search" />
 
     <fragment
-        android:id="@+id/nav_saved"
-        android:name="be.newz.newsy.ui.saved.SavedFragment"
-        android:label="@string/menu_saved"
-        tools:layout="@layout/fragment_saved" />
-
-    <fragment
         android:id="@+id/nav_preferences"
         android:name="be.newz.newsy.ui.preferences.PreferencensFragment"
         android:label="@string/menu_preferences"
         tools:layout="@layout/fragment_preferences" />
 
     <fragment
-        android:id="@+id/nav_share"
-        android:name="be.newz.newsy.ui.share.ShareFragment"
-        android:label="@string/menu_share"
-        tools:layout="@layout/fragment_share" />
+        android:id="@+id/nav_favorites"
+        android:name="be.newz.newsy.ui.favorites.FavoritesFragment"
+        android:label="@string/menu_favorites"
+        tools:layout="@layout/fragment_favorites" />
 
-<!--    <fragment-->
-<!--        android:id="@+id/nav_filtered"-->
-<!--        android:name="be.newz.newsy.ui.filtered.FilteredFragment"-->
-<!--        android:label="@string/menu_share"-->
-<!--        tools:layout="@layout/fragment_filtered" />-->
+    <fragment
+        android:id="@+id/nav_help"
+        android:name="be.newz.newsy.ui.help.HelpFragment"
+        android:label="@string/menu_help"
+        tools:layout="@layout/fragment_help" />
 
 </navigation>

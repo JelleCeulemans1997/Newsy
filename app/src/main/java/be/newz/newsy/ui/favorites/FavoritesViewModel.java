@@ -1,14 +1,14 @@
-package be.newz.newsy.ui.share;
+package be.newz.newsy.ui.favorites;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class ShareViewModel extends ViewModel {
+public class FavoritesViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public ShareViewModel() {
+    public FavoritesViewModel() {
         mText = new MutableLiveData<>();
         mText.setValue("This is share fragment");
     }
