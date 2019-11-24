@@ -1,5 +1,6 @@
 package be.newz.newsy;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.navigation.NavController;
@@ -14,9 +15,12 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.os.Handler;
 import android.view.Menu;
 
 public class MainActivity extends AppCompatActivity {
+
+    private static int SPLASH_TIME_OUT = 4000;
 
     private AppBarConfiguration mAppBarConfiguration;
 
@@ -38,6 +42,8 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+
+     
     }
 
     @Override

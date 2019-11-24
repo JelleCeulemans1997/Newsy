@@ -28,4 +28,5 @@
         <item>Science</item>
         <item>Health</item>
     </string-array>
+    <string name="title_activity_start">StartActivity</string>
 </resources>
