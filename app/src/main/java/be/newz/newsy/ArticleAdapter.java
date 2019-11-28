@@ -7,10 +7,13 @@ import android.view.ViewGroup;
 import android.widget.*;
 import java.util.List;
 
+import be.newz.newsy.ui.home.HomeFragment;
+
 public class ArticleAdapter extends ArrayAdapter<Article> {
 
     private final Context context;
     private final List<Article> values;
+    private DatabaseHelper db;
 
     public ArticleAdapter(Context context, List<Article> values) {
         super(context, R.layout.articlelistviewitem, values);
@@ -34,6 +37,19 @@ public class ArticleAdapter extends ArrayAdapter<Article> {
         textViewDatum.setText(values.get(position).getPublished().toString());
         textViewSource.setText(values.get(position).getSource());
         textViewSourceUrl.setText(values.get(position).getSourceUrl());
+
+
+        Button buttonSaved = (Button) rowView.findViewById(R.id.saved);
+        buttonSaved.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Article article = new Article(values.get(position).getTitle(),values.get(position).getUrl(), values.get(position).getPublished(), values.get(position).getSource(),values.get(position).getSourceUrl());
+                Toast.makeText(getContext(),"saved", Toast.LENGTH_SHORT).show();
+
+                db = new DatabaseHelper(getContext());
+                db.insertArticle(article);
+            }
+        });
 
         return rowView;
     }

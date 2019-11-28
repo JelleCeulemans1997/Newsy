@@ -48,11 +48,10 @@
                 android:layout_height="wrap_content" />
         </LinearLayout>
     </LinearLayout>
-    <ImageView
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/saved"
         android:layout_alignParentRight="true"
-        android:src="@drawable/vinkjeuit"
-        />
+        android:text="Save"/>
 </RelativeLayout>
