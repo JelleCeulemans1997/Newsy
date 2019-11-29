@@ -1,6 +1,5 @@
 package be.newz.newsy.ui.search;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,16 +8,11 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
+
 
 import com.google.android.material.textfield.TextInputEditText;
 
@@ -27,12 +21,18 @@ import be.newz.newsy.ui.filtered.FilteredFragment;
 
 public class SearchFragment extends Fragment implements AdapterView.OnItemSelectedListener {
 
-    private SearchViewModel galleryViewModel;
+    private SearchViewModel searchViewModel;
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        //galleryViewModel = ViewModelProviders.of(this).get(SearchViewModel.class);
+
+        if (container != null) {
+            container.removeAllViews();
+        }
+
+
+        //searchViewModel = ViewModelProviders.of(this).get(BrowserViewModel.class);
         View root = inflater.inflate(R.layout.fragment_search, container, false);
 
         final TextInputEditText keywordTextInputEditText = root.findViewById(R.id.keywordTextInputEditText);
@@ -46,7 +46,7 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemSelect
         searchKeywordButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startFilteredGragment(keywordTextInputEditText.getText().toString(), 0);
+                startFilteredFragment(keywordTextInputEditText.getText().toString(), 0);
             }
         });
         return root;
@@ -57,7 +57,7 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemSelect
         //redirect or no redirect
         String topic = adapterView.getItemAtPosition(i).toString().toLowerCase();
         if (!topic.equals("choose")) {
-            startFilteredGragment(topic, 1);
+            startFilteredFragment(topic, 1);
         }
     }
 
@@ -66,7 +66,7 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemSelect
 
     }
 
-    private void startFilteredGragment(String keyword, int search) {
+    private void startFilteredFragment(String keyword, int search) {
         FilteredFragment filteredFragment = new FilteredFragment();
         Bundle bundle = new Bundle();
         bundle.putInt("search", search);

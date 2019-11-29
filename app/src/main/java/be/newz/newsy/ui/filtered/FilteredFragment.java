@@ -30,8 +30,16 @@ public class FilteredFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
+
+        if (container != null) {
+            container.removeAllViews();
+        }
+
+
         filteredViewModel = ViewModelProviders.of(this).get(FilteredViewModel.class);
         View root = inflater.inflate(R.layout.fragment_filtered, container, false);
+
+
 
         Bundle bundle = getArguments();
 

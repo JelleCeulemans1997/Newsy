@@ -28,6 +28,11 @@ public class PreferencensFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
+
+        if (container != null) {
+            container.removeAllViews();
+        }
+
         toolsViewModel =
                 ViewModelProviders.of(this).get(PreferencesViewModel.class);
         View root = inflater.inflate(R.layout.fragment_preferences, container, false);
