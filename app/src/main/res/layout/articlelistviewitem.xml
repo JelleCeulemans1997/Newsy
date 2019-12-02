@@ -58,16 +58,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
-                <Button
+                <ImageButton
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:id="@+id/saved"
-                    android:text="Save"/>
-                <Button
+                    android:src="@drawable/heart"/>
+                <ImageButton
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:id="@+id/browser"
-                    android:text="Go to article"/>
+                    android:src="@drawable/earth"/>
             </LinearLayout>
 
         </LinearLayout>

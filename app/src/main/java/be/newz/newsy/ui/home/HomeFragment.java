@@ -27,12 +27,15 @@ import be.newz.newsy.ArticleAdapter;
 import be.newz.newsy.DatabaseHelper;
 import be.newz.newsy.HttpReader;
 import be.newz.newsy.JsonHelper;
+import be.newz.newsy.Preference;
 import be.newz.newsy.R;
 
 public class HomeFragment extends Fragment {
 
     private HomeViewModel homeViewModel;
     private List<Article> articles;
+
+    private DatabaseHelper db;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -41,19 +44,13 @@ public class HomeFragment extends Fragment {
             container.removeAllViews();
         }
 
+        db = new DatabaseHelper(getContext());
+
         homeViewModel =
                 ViewModelProviders.of(this).get(HomeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_home, container, false);
 
-        //articles = homeViewModel.getArticles();
         getArticles(root);
-
-//        homeViewModel.getText().observe(this, new Observer<String>() {
-//            @Override
-//            public void onChanged(@Nullable String s) {
-//                //textView.setText(s);
-//            }
-//        });
         return root;
     }
 
@@ -70,6 +67,11 @@ public class HomeFragment extends Fragment {
                 listViewArtikels.setAdapter(artikelAdapter);
             }
         });
-        httpReader.execute("https://gnews.io/api/v3/top-news?country=be&lang=nl&token=f8437c31cb1a27be78ccbd616bc732ec");
+
+        Preference preference = db.getPreference();
+        String country = preference.getCountry();
+        String language = preference.getLanguage();
+
+        httpReader.execute("https://gnews.io/api/v3/top-news?country="+country+"&lang="+language+"&token=f8437c31cb1a27be78ccbd616bc732ec");
     }
 }

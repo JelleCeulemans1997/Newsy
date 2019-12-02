@@ -38,14 +38,14 @@ public class ArticleAdapter extends ArrayAdapter<Article> {
         final TextView textViewSource = (TextView) rowView.findViewById(R.id.source);
         final TextView textViewSourceUrl = (TextView) rowView.findViewById(R.id.sourceUrl);
 
-        final Button buttonBrowser = rowView.findViewById(R.id.browser);
+        final ImageButton imageButtonBrowser = rowView.findViewById(R.id.browser);
 
         textViewTitel.setText(values.get(position).getTitle());
         textViewDatum.setText(values.get(position).getPublished().toString());
         textViewSource.setText(values.get(position).getSource());
         textViewSourceUrl.setText(values.get(position).getSourceUrl());
 
-        buttonBrowser.setOnClickListener(new View.OnClickListener() {
+        imageButtonBrowser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getContext(), values.get(position).getUrl(), Toast.LENGTH_LONG).show();
@@ -63,8 +63,8 @@ public class ArticleAdapter extends ArrayAdapter<Article> {
         //add click with url to go to article
 
 
-        Button buttonSaved = (Button) rowView.findViewById(R.id.saved);
-        buttonSaved.setOnClickListener(new View.OnClickListener() {
+        ImageButton imageButtonSaved = (ImageButton) rowView.findViewById(R.id.saved);
+        imageButtonSaved.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Article article = new Article(values.get(position).getTitle(),values.get(position).getUrl(), values.get(position).getPublished(), values.get(position).getSource(),values.get(position).getSourceUrl());

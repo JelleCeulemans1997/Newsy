@@ -3,16 +3,16 @@ package be.newz.newsy;
 import java.util.Date;
 
 public class Article {
-    public String title;
-    public String url;
-    public Date published;
-    public String source;
-    public String sourceUrl;
+    private String title;
+    private String url;
+    private String published;
+    private String source;
+    private String sourceUrl;
 
     public Article() {
     }
 
-    public Article(String title, String url, Date published, String source, String sourceUrl) {
+    public Article(String title, String url, String published, String source, String sourceUrl) {
         this.title = title;
         this.url = url;
         this.published = published;
@@ -36,11 +36,11 @@ public class Article {
         this.url = url;
     }
 
-    public Date getPublished() {
+    public String getPublished() {
         return published;
     }
 
-    public void setPublished(Date published) {
+    public void setPublished(String published) {
         this.published = published;
     }
 

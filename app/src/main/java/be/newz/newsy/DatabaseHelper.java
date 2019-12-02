@@ -30,6 +30,32 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 "sourceUrl TEXT)";
         db.execSQL(CREATE_TABLE_ARTICLE);
 
+        String CREATE_TABLE_PREFERENCES =
+                "CREATE TABLE preference (" +
+                        "country TEXT, " +
+                        "language TEXT, "+
+                        "position INTEGER)";
+        db.execSQL(CREATE_TABLE_PREFERENCES);
+
+
+        ContentValues values = new ContentValues();
+        values.put("country", "be");
+        values.put("language", "nl");
+        values.put("position", 0);
+
+        db.insert("preference", null, values);
+
+//        String CREATE_TABLE_COUNTRY =
+//                "CREATE TABLE country (" +
+//                        "country TEXT, " +
+//                        "language TEXT, " +
+//                        "flagImage INTEGER," +
+//                        "countryValue TEXT, " +
+//                        "languageValue TEXT," +
+//                        "position INTEGER," +
+//                        "selected INTEGER DEFAULT 0)";
+//        db.execSQL(CREATE_TABLE_COUNTRY);
+
         //insertArticle(db);
     }
 
@@ -42,6 +68,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS article");
+        db.execSQL("DROP TABLE IF EXISTS preference");
 
         onCreate(db);
     }
@@ -54,7 +81,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         if (cursor.moveToFirst()) {
             do {
-                Article article = new Article(cursor.getString(0), cursor.getString(1), new Date(),cursor.getString(3), cursor.getString(4));
+                Article article = new Article(cursor.getString(0), cursor.getString(1), cursor.getString(2),cursor.getString(3), cursor.getString(4));
                 list.add(article);
             } while (cursor.moveToNext());
         }
@@ -76,4 +103,44 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.close();
         return id;
     }
+
+    public void clearPreferences() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("delete from preference");
+    }
+
+    public long insertPreference(Preference preference) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put("country", preference.getCountry());
+        values.put("language", preference.getLanguage());
+        values.put("position", preference.getPosition());
+
+        long id = db.insert("preference", null, values);
+        db.close();
+        return id;
+    }
+
+    public Preference getPreference() {
+        List<Preference> list = new ArrayList<Preference>();
+
+        String selectQuery = "SELECT * FROM preference";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        if (cursor.moveToFirst()) {
+            do {
+                Preference preference = new Preference(cursor.getString(0), cursor.getString(1), cursor.getInt(2));
+                list.add(preference);
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        db.close();
+        return list.get(0);
+    }
+
+
+
+
 }

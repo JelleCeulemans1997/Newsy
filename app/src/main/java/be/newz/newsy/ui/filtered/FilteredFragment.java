@@ -19,14 +19,18 @@ import java.util.List;
 
 import be.newz.newsy.Article;
 import be.newz.newsy.ArticleAdapter;
+import be.newz.newsy.DatabaseHelper;
 import be.newz.newsy.HttpReader;
 import be.newz.newsy.JsonHelper;
+import be.newz.newsy.Preference;
 import be.newz.newsy.R;
 
 public class FilteredFragment extends Fragment {
 
     private FilteredViewModel filteredViewModel;
     private List<Article> articles;
+
+    private DatabaseHelper db;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -39,7 +43,10 @@ public class FilteredFragment extends Fragment {
         filteredViewModel = ViewModelProviders.of(this).get(FilteredViewModel.class);
         View root = inflater.inflate(R.layout.fragment_filtered, container, false);
 
-
+        db = new DatabaseHelper(getContext());
+        Preference preference = db.getPreference();
+        String country = preference.getCountry();
+        String language = preference.getLanguage();
 
         Bundle bundle = getArguments();
 
@@ -48,11 +55,11 @@ public class FilteredFragment extends Fragment {
             String keyword = bundle.getString("keyword");
 
             if (search == 0) {
-                String url = "https://gnews.io/api/v3/search?q="+ keyword +"&country=be&lang=nl&token=f8437c31cb1a27be78ccbd616bc732ec";
+                String url = "https://gnews.io/api/v3/search?q="+ keyword +"&country="+country+"&lang="+language+"&token=f8437c31cb1a27be78ccbd616bc732ec";
                 getArticles(root, url);
             }
             else if (search == 1) {
-                String url = "https://gnews.io/api/v3/topics/"+ keyword +"?country=be&lang=nl&token=f8437c31cb1a27be78ccbd616bc732ec";
+                String url = "https://gnews.io/api/v3/topics/"+ keyword +"?country="+country+"&lang="+language+"&token=f8437c31cb1a27be78ccbd616bc732ec";
                 getArticles(root, url);
             } else {
                 Toast.makeText(getContext(), "ERROR ERROR ERROR", Toast.LENGTH_LONG).show();
