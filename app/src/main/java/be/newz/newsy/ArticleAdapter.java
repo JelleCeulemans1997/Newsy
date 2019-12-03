@@ -35,32 +35,31 @@ public class ArticleAdapter extends ArrayAdapter<Article> {
 
         final TextView textViewTitel = (TextView) rowView.findViewById(R.id.title);
         final TextView textViewDatum = (TextView) rowView.findViewById(R.id.date);
-        final TextView textViewSource = (TextView) rowView.findViewById(R.id.source);
-        final TextView textViewSourceUrl = (TextView) rowView.findViewById(R.id.sourceUrl);
+        final Button buttonSource = (Button) rowView.findViewById(R.id.source);
+        //final TextView textViewSourceUrl = (TextView) rowView.findViewById(R.id.sourceUrl);
 
         final ImageButton imageButtonBrowser = rowView.findViewById(R.id.browser);
 
         textViewTitel.setText(values.get(position).getTitle());
         textViewDatum.setText(values.get(position).getPublished().toString());
-        textViewSource.setText(values.get(position).getSource());
-        textViewSourceUrl.setText(values.get(position).getSourceUrl());
+        buttonSource.setText(values.get(position).getSource());
+        buttonSource.setTag(values.get(position).getSourceUrl());
 
+        buttonSource.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openBrowser(view.getTag().toString());
+            }
+        });
         imageButtonBrowser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getContext(), values.get(position).getUrl(), Toast.LENGTH_LONG).show();
-                BrowserFragment browserFragment = new BrowserFragment();
-                Bundle bundle = new Bundle();
-                bundle.putString("url", values.get(position).getUrl());
-                browserFragment.setArguments(bundle);
-                ((FragmentActivity) view.getContext()).getFragmentManager().beginTransaction()
-                        .replace(R.id.nav_host_fragment, browserFragment)
-                        .commit();
-
+                openBrowser(values.get(position).getUrl());
             }
         });
 
-        //add click with url to go to article
+
+
 
 
         ImageButton imageButtonSaved = (ImageButton) rowView.findViewById(R.id.saved);
@@ -76,5 +75,15 @@ public class ArticleAdapter extends ArrayAdapter<Article> {
         });
 
         return rowView;
+    }
+
+    private void openBrowser(String url) {
+        BrowserFragment browserFragment = new BrowserFragment();
+        Bundle bundle = new Bundle();
+        bundle.putString("url", url);
+        browserFragment.setArguments(bundle);
+        ((FragmentActivity) getContext()).getFragmentManager().beginTransaction()
+                .replace(R.id.nav_host_fragment, browserFragment)
+                .commit();
     }
 }
