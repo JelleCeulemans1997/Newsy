@@ -6,23 +6,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.Spinner;
 
 import androidx.annotation.NonNull;
 import android.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-
-import com.google.android.material.textfield.TextInputEditText;
+import androidx.appcompat.app.AppCompatActivity;
+import com.google.android.material.navigation.NavigationView;
 
 import be.newz.newsy.R;
-import be.newz.newsy.ui.filtered.FilteredFragment;
 
-public class BrowserFragment extends Fragment {
+public class BrowserFragment extends Fragment{
 
-    private BrowserViewModel browserViewModel;
     private WebView webView;
 
 
@@ -36,6 +29,14 @@ public class BrowserFragment extends Fragment {
 
         Bundle bundle = getArguments();
         String url = bundle.getString("url");
+
+        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("Browser");
+
+
+        NavigationView navigationView = getActivity().findViewById(R.id.nav_view);
+        for (int i = 0; i <  navigationView.getMenu().size(); i++) {
+            navigationView.getMenu().getItem(i).setChecked(false);
+        }
 
         webView = (WebView) root.findViewById(R.id.webViewBrowser);
         webView.getSettings().setJavaScriptEnabled(true);

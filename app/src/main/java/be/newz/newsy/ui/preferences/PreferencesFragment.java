@@ -10,7 +10,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
+import android.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
 import java.util.ArrayList;
@@ -21,14 +21,13 @@ import be.newz.newsy.DatabaseHelper;
 import be.newz.newsy.Preference;
 import be.newz.newsy.R;
 
-public class PreferencensFragment extends Fragment {
+public class PreferencesFragment extends Fragment {
 
     private ArrayList<CountryItem> countryList;
     private CountryAdapter countryAdapter;
 
     private DatabaseHelper db;
 
-    private PreferencesViewModel toolsViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -39,8 +38,6 @@ public class PreferencensFragment extends Fragment {
 
         db = new DatabaseHelper(getContext());
 
-        toolsViewModel =
-                ViewModelProviders.of(this).get(PreferencesViewModel.class);
         View root = inflater.inflate(R.layout.fragment_preferences, container, false);
 
         initList();
