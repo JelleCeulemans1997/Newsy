@@ -64,12 +64,14 @@ public class ArticleAdapter extends ArrayAdapter<Article> {
         imageButtonShare.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String textToSend = "<p>Lees hier het artikel: "  + article.getTitle() + "</p>";
-                textToSend += "<a href=" + article.getUrl() + ">" +  article.getUrl()  + "</a>";
+/*                String textToSend = "<p>Lees hier het artikel: "  + article.getTitle() + "</p>";
+                textToSend += "<a href=" + article.getUrl() + ">" +  article.getUrl()  + "</a>";*/
+                String textToSend = "Lees hier het artikel: "  + article.getTitle() + "  " + article.getUrl();
                 Intent sendIntent = new Intent();
                 sendIntent.setAction(Intent.ACTION_SEND);
                 sendIntent.putExtra(Intent.EXTRA_TEXT, textToSend);
-                sendIntent.setType("text/html");
+                //sendIntent.setType("text/html");
+                sendIntent.setType("text/plain");
 
                 Intent shareIntent = Intent.createChooser(sendIntent, null);
                 getContext().startActivity(shareIntent);
