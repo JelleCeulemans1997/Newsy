@@ -1,6 +1,7 @@
 package be.newz.newsy;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -39,11 +40,14 @@ public class ArticleAdapter extends ArrayAdapter<Article> {
         //final TextView textViewSourceUrl = (TextView) rowView.findViewById(R.id.sourceUrl);
 
         final ImageButton imageButtonBrowser = rowView.findViewById(R.id.browser);
+        final ImageButton imageButtonShare = rowView.findViewById(R.id.share);
 
         textViewTitel.setText(values.get(position).getTitle());
         textViewDatum.setText(values.get(position).getPublished().toString());
         buttonSource.setText(values.get(position).getSource());
         buttonSource.setTag(values.get(position).getSourceUrl());
+
+        final Article article = new Article(values.get(position).getTitle(),values.get(position).getUrl(), values.get(position).getPublished(), values.get(position).getSource(),values.get(position).getSourceUrl());
 
         buttonSource.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,16 +61,26 @@ public class ArticleAdapter extends ArrayAdapter<Article> {
                 openBrowser(values.get(position).getUrl());
             }
         });
+        imageButtonShare.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String textToSend = "<p>Lees hier het artikel: "  + article.getTitle() + "</p>";
+                textToSend += "<a href=" + article.getUrl() + ">" +  article.getUrl()  + "</a>";
+                Intent sendIntent = new Intent();
+                sendIntent.setAction(Intent.ACTION_SEND);
+                sendIntent.putExtra(Intent.EXTRA_TEXT, textToSend);
+                sendIntent.setType("text/html");
 
-
-
-
+                Intent shareIntent = Intent.createChooser(sendIntent, null);
+                getContext().startActivity(shareIntent);
+            }
+        });
 
         ImageButton imageButtonSaved = (ImageButton) rowView.findViewById(R.id.saved);
         imageButtonSaved.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Article article = new Article(values.get(position).getTitle(),values.get(position).getUrl(), values.get(position).getPublished(), values.get(position).getSource(),values.get(position).getSourceUrl());
+
                 Toast.makeText(getContext(),"saved", Toast.LENGTH_SHORT).show();
 
                 db = new DatabaseHelper(getContext());
