@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -89,19 +90,35 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.close();
         return list;
     }
-    public long insertArticle(Article article) {
-        SQLiteDatabase db = this.getWritableDatabase();
+    public boolean insertArticle(Article article) {
+        boolean check = checkArticle(article);
+        if (check == false) {
+            SQLiteDatabase db = this.getWritableDatabase();
 
-        ContentValues values = new ContentValues();
-        values.put("title", article.getTitle());
-        values.put("url", article.getUrl());
-        values.put("published", article.getPublished().toString());
-        values.put("source", article.getSource());
-        values.put("sourceUrl", article.getSourceUrl());
+            ContentValues values = new ContentValues();
+            values.put("title", article.getTitle());
+            values.put("url", article.getUrl());
+            values.put("published", article.getPublished().toString());
+            values.put("source", article.getSource());
+            values.put("sourceUrl", article.getSourceUrl());
 
-        long id = db.insert("article", null, values);
-        db.close();
-        return id;
+            long id = db.insert("article", null, values);
+            db.close();
+           // return id;
+            return true;
+        }
+        return false;
+    }
+    
+    public boolean checkArticle(Article article){
+        List<Article> articles = getArticles();
+        for (Article a: articles) {
+            if (article.getUrl().equals(a.getUrl()) && article.getTitle().equals(a.getTitle()) && article.getSource().equals(a.getSource())) {
+                //article already ssaved
+                return true;
+            }
+        }
+        return false;
     }
 
     public void clearPreferences() {

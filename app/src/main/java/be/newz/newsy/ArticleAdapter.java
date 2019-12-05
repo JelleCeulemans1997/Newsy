@@ -81,10 +81,14 @@ public class ArticleAdapter extends ArrayAdapter<Article> {
             @Override
             public void onClick(View view) {
 
-                Toast.makeText(getContext(),"saved", Toast.LENGTH_SHORT).show();
-
                 db = new DatabaseHelper(getContext());
-                db.insertArticle(article);
+                boolean inserted = db.insertArticle(article);
+                if ( inserted == true) {
+                    Toast.makeText(getContext(),"Saved", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    Toast.makeText(getContext(),"Was already saved", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
