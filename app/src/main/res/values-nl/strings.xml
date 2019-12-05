@@ -1,20 +1,18 @@
 <resources>
-    <string name="app_name" translatable="false">Newsy</string>
+    <string name="app_name">Newsy</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Newsy</string>
     <string name="nav_header_subtitle">The newest newsies</string>
     <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">Instellingen</string>
 
     <string name="menu_home">Home</string>
-    <string name="menu_search">Search</string>
+    <string name="menu_search">Zoeken</string>
     <string name="menu_help">Help</string>
-    <string name="menu_preferences">Preferences</string>
-    <string name="menu_favorites">Favorites</string>
-    <string name="menu_send">Send</string>
-    <string name="keyword">Search on keyword</string>
-    <string name="search">Search</string>
+    <string name="menu_preferences">Voorkeuren</string>
+    <string name="menu_favorites">Favoriete artikels</string>
+    <string name="menu_send">Verzenden</string>
 
 
     <string-array name="topics">
@@ -29,4 +27,6 @@
         <item>Health</item>
     </string-array>
     <string name="title_activity_start">Newsy</string>
+    <string name="keyword">Zoeken op trefwoord</string>
+    <string name="search">Zoeken</string>
 </resources>
