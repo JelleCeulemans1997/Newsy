@@ -121,6 +121,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return false;
     }
 
+   /* public void deleteArticle(Article article) {
+        //delete by id
+        String deleteQurery = "DELETE FROM article WHERE titel = " + article.getTitle();
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL(deleteQurery);
+    }
+*/
     public void clearPreferences() {
         SQLiteDatabase db = this.getWritableDatabase();
         db.execSQL("delete from preference");

@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -20,6 +21,7 @@ import java.util.List;
 import be.newz.newsy.Article;
 import be.newz.newsy.ArticleAdapter;
 import be.newz.newsy.DatabaseHelper;
+import be.newz.newsy.FavoritesAdapter;
 import be.newz.newsy.MainActivity;
 import be.newz.newsy.R;
 
@@ -50,7 +52,10 @@ public class FavoritesFragment extends Fragment {
         final List<Article> articles = db.getArticles();
 
         final ListView listViewArtikels = (ListView) root.findViewById(R.id.listViewArticles);
-        ArticleAdapter artikelAdapter = new ArticleAdapter(getContext(), articles);
-        listViewArtikels.setAdapter(artikelAdapter);
+   /*     ArticleAdapter artikelAdapter = new ArticleAdapter(getContext(), articles);
+        listViewArtikels.setAdapter(artikelAdapter);*/
+
+        FavoritesAdapter favoritesAdapter = new FavoritesAdapter(getContext(), articles);
+        listViewArtikels.setAdapter(favoritesAdapter);
     }
 }
