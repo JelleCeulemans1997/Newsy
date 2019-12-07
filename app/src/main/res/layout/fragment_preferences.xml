@@ -4,20 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Switch
-        android:id="@+id/simpleSwitch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:checked="true"
-        android:text="Push messages"
-        android:layout_centerHorizontal="true"
-        android:textOn="On"
-        android:textOff="Off"
-        android:textColor="#f00"
-        android:gravity="center"
-        android:textSize="25sp"
-        android:layout_marginTop="50dp"/> <!--25sp displayed text size-->
-
     <Spinner
         android:id="@+id/spinner_countries"
         android:layout_alignParentTop="true"
