@@ -52,7 +52,7 @@ public class ArticleAdapter extends ArrayAdapter<Article> {
         imageButtonSaved.setImageResource(R.drawable.heart);
         imageButtonShare.setImageResource(R.drawable.share);
 
-        final Article article = new Article(values.get(position).getTitle(), values.get(position).getUrl(), values.get(position).getPublished(), values.get(position).getSource(), values.get(position).getSourceUrl());
+        final Article article = new Article(0, values.get(position).getTitle(), values.get(position).getUrl(), values.get(position).getPublished(), values.get(position).getSource(), values.get(position).getSourceUrl());
 
         buttonSource.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -8,16 +8,18 @@ public class Article {
     private String published;
     private String source;
     private String sourceUrl;
+    private int id;
 
     public Article() {
     }
 
-    public Article(String title, String url, String published, String source, String sourceUrl) {
+    public Article(int id, String title, String url, String published, String source, String sourceUrl) {
         this.title = title;
         this.url = url;
         this.published = published;
         this.source = source;
         this.sourceUrl = sourceUrl;
+        this.id = id;
     }
 
     public String getTitle() {
@@ -58,6 +60,14 @@ public class Article {
 
     public void setSourceUrl(String sourceUrl) {
         this.sourceUrl = sourceUrl;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     @Override

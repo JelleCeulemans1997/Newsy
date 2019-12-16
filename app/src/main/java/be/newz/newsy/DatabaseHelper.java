@@ -5,15 +5,18 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import be.newz.newsy.ui.favorites.FavoritesFragment;
+
 public class DatabaseHelper extends SQLiteOpenHelper {
     // Database Version
-    private static final int DATABASE_VERSION = 2;
+    private static final int DATABASE_VERSION = 3;
     // Database Name
     private static final String DATABASE_NAME = "newsy";
 
@@ -24,6 +27,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         String CREATE_TABLE_ARTICLE =
                 "CREATE TABLE article (" +
+                "id INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "title TEXT, " +
                 "url TEXT, " +
                 "published TEXT," +
@@ -82,7 +86,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         if (cursor.moveToFirst()) {
             do {
-                Article article = new Article(cursor.getString(0), cursor.getString(1), cursor.getString(2),cursor.getString(3), cursor.getString(4));
+                Article article = new Article(cursor.getInt(0), cursor.getString(1), cursor.getString(2), cursor.getString(3),cursor.getString(4), cursor.getString(5));
                 list.add(article);
             } while (cursor.moveToNext());
         }
@@ -109,7 +113,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         return false;
     }
-    
+
     public boolean checkArticle(Article article){
         List<Article> articles = getArticles();
         for (Article a: articles) {
@@ -121,13 +125,32 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return false;
     }
 
-   /* public void deleteArticle(Article article) {
-        //delete by id
-        String deleteQurery = "DELETE FROM article WHERE titel = " + article.getTitle();
-        SQLiteDatabase db = this.getWritableDatabase();
-        db.execSQL(deleteQurery);
+    public void deleteArticle(Article article) {
+        List<Article> list = new ArrayList<Article>();
+
+        String selectQuery = "SELECT * FROM article";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        if (cursor.moveToFirst()) {
+            do {
+                Article a = new Article(cursor.getInt(0), cursor.getString(1), cursor.getString(2),cursor.getString(3), cursor.getString(4),cursor.getString(5));
+                list.add(a);
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+
+        for (Article art: list) {
+            if (art.getTitle().equals(article.getTitle()) && art.getUrl().equals(article.getUrl())) {
+                String deleteQurery = "DELETE FROM article WHERE id = " + art.getId();
+                db = this.getWritableDatabase();
+                db.execSQL(deleteQurery);
+            }
+        }
+        db.close();
+        //FavoritesAdapter favoritesAdapter = new FavoritesAdapter(this, list);
     }
-*/
+
     public void clearPreferences() {
         SQLiteDatabase db = this.getWritableDatabase();
         db.execSQL("delete from preference");

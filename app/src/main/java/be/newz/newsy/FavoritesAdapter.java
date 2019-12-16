@@ -35,7 +35,7 @@ public class FavoritesAdapter extends ArrayAdapter<Article> {
         LayoutInflater inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-        View rowView = inflater.inflate(R.layout.articlelistviewitem, parent, false);
+        final View rowView = inflater.inflate(R.layout.articlelistviewitem, parent, false);
 
         final TextView textViewTitel = (TextView) rowView.findViewById(R.id.title);
         final TextView textViewDatum = (TextView) rowView.findViewById(R.id.date);
@@ -53,8 +53,9 @@ public class FavoritesAdapter extends ArrayAdapter<Article> {
         imageButtonBrowser.setImageResource(R.drawable.earth);
         imageButtonSaved.setImageResource(R.drawable.delete);
         imageButtonShare.setImageResource(R.drawable.share);
+        imageButtonSaved.setTag(position);
 
-        final Article article = new Article(values.get(position).getTitle(), values.get(position).getUrl(), values.get(position).getPublished(), values.get(position).getSource(), values.get(position).getSourceUrl());
+        final Article article = new Article(0,values.get(position).getTitle(), values.get(position).getUrl(), values.get(position).getPublished(), values.get(position).getSource(), values.get(position).getSourceUrl());
 
         buttonSource.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,7 +87,10 @@ public class FavoritesAdapter extends ArrayAdapter<Article> {
             @Override
             public void onClick(View view) {
                 db = new DatabaseHelper(getContext());
-                //db.deleteArticle(article);
+                db.deleteArticle(article);
+                //values.remove(view.getTag());
+                //notifyDataSetChanged();
+                //Toast.makeText(getContext(), view.getTag() + "", Toast.LENGTH_SHORT).show();
             }
         });
 
