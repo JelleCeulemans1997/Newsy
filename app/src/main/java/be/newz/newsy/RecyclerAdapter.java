@@ -15,7 +15,7 @@ import com.github.florent37.expansionpanel.viewgroup.ExpansionLayoutCollection;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.RecyclerHolder> {
+public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerHolder> {
 
     private final List<Page> list = new ArrayList<>();
     private final ExpansionLayoutCollection expansionsCollection = new ExpansionLayoutCollection();
@@ -48,36 +48,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Recycl
         return list.size();
     }
 
-
     public void setItems(List<Page> items) {
         this.list.addAll(items);
         notifyDataSetChanged();
-    }
-
-    public final static class RecyclerHolder extends RecyclerView.ViewHolder {
-
-        private static final int LAYOUT = R.layout.expendable_recycleview_page;
-
-
-        ExpansionLayout expansionLayout;
-
-        public static RecyclerHolder buildFor(ViewGroup viewGroup) {
-            return new RecyclerHolder(LayoutInflater
-                    .from(viewGroup.getContext()).inflate(LAYOUT, viewGroup, false));
-        }
-
-        public RecyclerHolder(View itemView) {
-            super(itemView);
-            expansionLayout = itemView.findViewById(R.id.expansionLayout);
-
-        }
-
-        public void bind(Object object) {
-            expansionLayout.collapse(false);
-        }
-
-        public ExpansionLayout getExpansionLayout() {
-            return expansionLayout;
-        }
     }
 }
