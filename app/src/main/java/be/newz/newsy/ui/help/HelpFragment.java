@@ -11,15 +11,10 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.github.florent37.expansionpanel.ExpansionLayout;
-import com.github.florent37.expansionpanel.viewgroup.ExpansionLayoutCollection;
-
 import java.util.ArrayList;
 import java.util.List;
 
 import be.newz.newsy.Page;
-import be.newz.newsy.Paragraph;
-import be.newz.newsy.ParagraphAdapter;
 import be.newz.newsy.R;
 import be.newz.newsy.RecyclerAdapter;
 
@@ -45,13 +40,8 @@ public class HelpFragment extends Fragment {
 
         List<Page> pages = new ArrayList<>();
 
-        ArrayList<Paragraph> paragraphs = new ArrayList<>();
-        paragraphs.add(new Paragraph("First paragraph"));
-        paragraphs.add(new Paragraph("Second adapter"));
-
-        Page home = new Page("First page", paragraphs);
-
-        pages.add(home);
+        pages.add(new Page("Homepage", R.layout.help_home));
+        pages.add(new Page("Searchpage", R.layout.help_search));
 
         adapter.setItems(pages);
         recyclerView.setAdapter(adapter);
