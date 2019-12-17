@@ -11,6 +11,8 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import android.app.Fragment;
+
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProviders;
 
 import java.util.ArrayList;
@@ -35,6 +37,8 @@ public class PreferencesFragment extends Fragment {
         if (container != null) {
             container.removeAllViews();
         }
+
+        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("Preferences");
 
         db = new DatabaseHelper(getContext());
 

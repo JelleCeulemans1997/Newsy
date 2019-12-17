@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.Spinner;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
@@ -31,6 +32,7 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemSelect
             container.removeAllViews();
         }
 
+        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("Search");
 
         //searchViewModel = ViewModelProviders.of(this).get(BrowserViewModel.class);
         View root = inflater.inflate(R.layout.fragment_search, container, false);
