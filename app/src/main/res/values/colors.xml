@@ -4,4 +4,9 @@
     <color name="colorPrimaryDark">#486E84</color>
     <color name="colorAccent">#20695E</color>
 
+
+    <color name="colorButtonBrowser">#7583A1</color>
+    <color name="colorButtonShare">#3FBFB0</color>
+    <color name="colorButtonSave">#DD6069</color>
+
 </resources>
