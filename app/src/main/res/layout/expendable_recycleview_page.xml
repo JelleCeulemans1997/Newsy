@@ -3,21 +3,24 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
 
     <com.github.florent37.expansionpanel.ExpansionHeader
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         app:expansion_headerIndicator="@id/headerIndicator"
         app:expansion_layout="@id/expansionLayout"
-        app:expansion_toggleOnClick="true">
+        app:expansion_toggleOnClick="true"
+        android:layout_marginTop="2dp"
+        >
 
         <RelativeLayout
             android:background="@android:color/white"
             android:layout_height="48dp"
             android:layout_width="match_parent"
             android:paddingLeft="16dp"
-            android:paddingRight="16dp">
+            android:paddingRight="16dp" >
 
             <TextView
                 android:layout_centerVertical="true"
@@ -25,15 +28,16 @@
                 android:layout_width="wrap_content"
                 android:text="Trip name"
                 android:textColor="#3E3E3E"
-                android:id="@+id/textViewTitle"/>
+                android:id="@+id/textViewTitle"
+                android:layout_centerHorizontal="true"/>
 
-            <TextView
-                android:layout_centerVertical="true"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="120dp"
-                android:layout_width="wrap_content"
-                android:text="Carribean cruise"
-                android:textColor="#AAA" />
+<!--            <TextView-->
+<!--                android:layout_centerVertical="true"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginLeft="120dp"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:text="Carribean cruise"-->
+<!--                android:textColor="#AAA" />-->
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:adjustViewBounds="true"
@@ -53,7 +57,8 @@
         android:id="@+id/expansionLayout"
         app:expansion_expanded="false"
         android:layout_height="wrap_content"
-        android:layout_width="match_parent">
+        android:layout_width="match_parent"
+        android:background="#fff">
 
         <LinearLayout
             android:id="@+id/container"

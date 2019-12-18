@@ -95,7 +95,6 @@ public class FavoritesAdapter extends ArrayAdapter<Article> {
                 notifyDataSetChanged();
             }
         });
-
         return rowView;
     }
 

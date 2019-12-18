@@ -63,6 +63,7 @@ public class HomeFragment extends Fragment {
         httpReader.setOnResultReadyListener(new HttpReader.OnResultReadyListener() {
             @Override
             public void resultReady(String result) {
+                Log.d("lol", result);
                 JsonHelper jsonHelper = new JsonHelper();
                 articles = jsonHelper.getArticles(result);
 

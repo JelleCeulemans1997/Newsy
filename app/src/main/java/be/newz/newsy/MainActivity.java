@@ -21,7 +21,10 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toast;
 
+import be.newz.newsy.ui.browser.BrowserFragment;
 import be.newz.newsy.ui.preferences.PreferencesFragment;
 
 public class MainActivity extends AppCompatActivity {
@@ -85,5 +88,16 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
+    }
+
+    public void goToPage(View view) {
+//        Toast.makeText(this, view.getTag().toString(), Toast.LENGTH_LONG).show();
+        BrowserFragment browserFragment = new BrowserFragment();
+        Bundle bundle = new Bundle();
+        bundle.putString("url", view.getTag().toString());
+        browserFragment.setArguments(bundle);
+        ((FragmentActivity) this).getFragmentManager().beginTransaction()
+                .replace(R.id.nav_host_fragment, browserFragment)
+                .commit();
     }
 }

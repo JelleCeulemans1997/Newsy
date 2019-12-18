@@ -21,7 +21,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerHolder> {
     private final ExpansionLayoutCollection expansionsCollection = new ExpansionLayoutCollection();
 
     public RecyclerAdapter() {
-        expansionsCollection.openOnlyOne(true);
+        expansionsCollection.openOnlyOne(false);
     }
 
     @Override

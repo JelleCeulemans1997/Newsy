@@ -9,6 +9,6 @@
         android:layout_height="wrap_content"
         android:justificationMode="inter_word"
         android:layout_margin="15dp"
-        android:text="@string/help_search"/>
+        android:text="@string/help_favorites"/>
 
 </LinearLayout>

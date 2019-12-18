@@ -29,4 +29,14 @@
         <item>Health</item>
     </string-array>
     <string name="title_activity_start">Newsy</string>
+    <string name="help_home_title">Home</string>
+    <string name="help_home">........</string>
+    <string name="help_search_title">Zoeken</string>
+    <string name="help_search">Via de zoekoptie kan de gebruiker artikels met een zelf gekozen sleutelwoord of filteren op categorie</string>
+    <string name="help_favorites_title">Favorites</string>
+    <string name="help_favorites">favorites content</string>
+    <string name="help_settings_title">Settings</string>
+    <string name="help_settings">settings content</string>
+    <string name="help_authors_title">Authors</string>
+    <string name="help_authors">authors content</string>
 </resources>
