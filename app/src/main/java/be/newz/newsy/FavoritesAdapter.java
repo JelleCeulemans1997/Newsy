@@ -3,6 +3,7 @@ package be.newz.newsy;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,7 +22,7 @@ import be.newz.newsy.ui.browser.BrowserFragment;
 
 public class FavoritesAdapter extends ArrayAdapter<Article> {
     private final Context context;
-    private final List<Article> values;
+    private List<Article> values;
     private DatabaseHelper db;
 
     public FavoritesAdapter(Context context, List<Article> values) {
@@ -44,6 +45,8 @@ public class FavoritesAdapter extends ArrayAdapter<Article> {
         final ImageButton imageButtonBrowser = rowView.findViewById(R.id.browser);
         final ImageButton imageButtonSaved = (ImageButton) rowView.findViewById(R.id.saved);
         final ImageButton imageButtonShare = rowView.findViewById(R.id.share);
+
+        Log.d("lol", values.get(position).getTitle());
 
         textViewTitel.setText(values.get(position).getTitle());
         textViewDatum.setText(values.get(position).getPublished().toString());
@@ -88,9 +91,8 @@ public class FavoritesAdapter extends ArrayAdapter<Article> {
             public void onClick(View view) {
                 db = new DatabaseHelper(getContext());
                 db.deleteArticle(article);
-                //values.remove(view.getTag());
-                //notifyDataSetChanged();
-                //Toast.makeText(getContext(), view.getTag() + "", Toast.LENGTH_SHORT).show();
+                values.remove(Integer.parseInt(view.getTag().toString()));
+                notifyDataSetChanged();
             }
         });
 

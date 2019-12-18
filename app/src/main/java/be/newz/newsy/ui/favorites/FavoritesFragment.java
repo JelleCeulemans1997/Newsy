@@ -28,7 +28,7 @@ import be.newz.newsy.R;
 
 public class FavoritesFragment extends Fragment {
 
-    private FavoritesViewModel shareViewModel;
+    // private FavoritesViewModel shareViewModel;
     private DatabaseHelper db;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -40,8 +40,7 @@ public class FavoritesFragment extends Fragment {
 
         ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("Favorites");
 
-        shareViewModel =
-                ViewModelProviders.of(this).get(FavoritesViewModel.class);
+        // shareViewModel = ViewModelProviders.of(this).get(FavoritesViewModel.class);
         View root = inflater.inflate(R.layout.fragment_favorites, container, false);
 
 
@@ -52,9 +51,9 @@ public class FavoritesFragment extends Fragment {
     }
 
     public void readarticlesSQL (final View root) {
-        final List<Article> articles = db.getArticles();
+        List<Article> articles = db.getArticles();
 
-        final ListView listViewArtikels = (ListView) root.findViewById(R.id.listViewArticles);
+        ListView listViewArtikels = (ListView) root.findViewById(R.id.listViewArticles);
         FavoritesAdapter favoritesAdapter = new FavoritesAdapter(getContext(), articles);
         listViewArtikels.setAdapter(favoritesAdapter);
     }

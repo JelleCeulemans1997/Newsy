@@ -11,7 +11,7 @@ import com.github.florent37.expansionpanel.ExpansionLayout;
 public final class RecyclerHolder extends RecyclerView.ViewHolder {
 
     private static final int LAYOUT = R.layout.expendable_recycleview_page;
-    
+
     ExpansionLayout expansionLayout;
 
     public static RecyclerHolder buildFor(ViewGroup viewGroup) {
