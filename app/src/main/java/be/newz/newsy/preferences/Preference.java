@@ -1,4 +1,4 @@
-package be.newz.newsy;
+package be.newz.newsy.preferences;
 
 public class Preference {
     private String country;

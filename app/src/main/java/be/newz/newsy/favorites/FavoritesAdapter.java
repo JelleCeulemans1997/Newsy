@@ -1,28 +1,32 @@
-package be.newz.newsy;
+package be.newz.newsy.favorites;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.*;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.TextView;
 
 import androidx.fragment.app.FragmentActivity;
 
 import java.util.List;
 
-import androidx.fragment.app.FragmentManager;
+import be.newz.newsy.R;
+import be.newz.newsy.articles.Article;
+import be.newz.newsy.articles.DatabaseHelper;
+import be.newz.newsy.browser.BrowserFragment;
 
-import be.newz.newsy.ui.browser.BrowserFragment;
-
-public class ArticleAdapter extends ArrayAdapter<Article> {
-
+public class FavoritesAdapter extends ArrayAdapter<Article> {
     private final Context context;
-    private final List<Article> values;
+    private List<Article> values;
     private DatabaseHelper db;
 
-    public ArticleAdapter(Context context, List<Article> values) {
+    public FavoritesAdapter(Context context, List<Article> values) {
         super(context, R.layout.articlelistviewitem, values);
         this.context = context;
         this.values = values;
@@ -33,7 +37,7 @@ public class ArticleAdapter extends ArrayAdapter<Article> {
         LayoutInflater inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-        View rowView = inflater.inflate(R.layout.articlelistviewitem, parent, false);
+        final View rowView = inflater.inflate(R.layout.articlelistviewitem, parent, false);
 
         final TextView textViewTitel = (TextView) rowView.findViewById(R.id.title);
         final TextView textViewDatum = (TextView) rowView.findViewById(R.id.date);
@@ -43,16 +47,19 @@ public class ArticleAdapter extends ArrayAdapter<Article> {
         final ImageButton imageButtonSaved = (ImageButton) rowView.findViewById(R.id.saved);
         final ImageButton imageButtonShare = rowView.findViewById(R.id.share);
 
+        Log.d("lol", values.get(position).getTitle());
+
         textViewTitel.setText(values.get(position).getTitle());
         textViewDatum.setText(values.get(position).getPublished().toString());
         buttonSource.setText(values.get(position).getSource());
         buttonSource.setTag(values.get(position).getSourceUrl());
 
         imageButtonBrowser.setImageResource(R.drawable.earth);
-        imageButtonSaved.setImageResource(R.drawable.heart);
+        imageButtonSaved.setImageResource(R.drawable.delete);
         imageButtonShare.setImageResource(R.drawable.share);
+        imageButtonSaved.setTag(position);
 
-        final Article article = new Article(0, values.get(position).getTitle(), values.get(position).getUrl(), values.get(position).getPublished(), values.get(position).getSource(), values.get(position).getSourceUrl());
+        final Article article = new Article(0,values.get(position).getTitle(), values.get(position).getUrl(), values.get(position).getPublished(), values.get(position).getSource(), values.get(position).getSourceUrl());
 
         buttonSource.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,17 +90,12 @@ public class ArticleAdapter extends ArrayAdapter<Article> {
         imageButtonSaved.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 db = new DatabaseHelper(getContext());
-                boolean inserted = db.insertArticle(article);
-                if (inserted == true) {
-                    Toast.makeText(getContext(), "Saved", Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(getContext(), "Was already saved", Toast.LENGTH_SHORT).show();
-                }
+                db.deleteArticle(article);
+                values.remove(Integer.parseInt(view.getTag().toString()));
+                notifyDataSetChanged();
             }
         });
-
         return rowView;
     }
 

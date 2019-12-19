@@ -1,4 +1,4 @@
-package be.newz.newsy;
+package be.newz.newsy.articles;
 
 import android.os.AsyncTask;
 import android.util.Log;

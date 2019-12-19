@@ -7,31 +7,31 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="be.newz.newsy.ui.home.HomeFragment"
+        android:name="be.newz.newsy.home.HomeFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/nav_search"
-        android:name="be.newz.newsy.ui.search.SearchFragment"
+        android:name="be.newz.newsy.search.SearchFragment"
         android:label="@string/menu_search"
         tools:layout="@layout/fragment_search" />
 
 <!--    <fragment-->
 <!--        android:id="@+id/nav_preferences"-->
-<!--        android:name="be.newz.newsy.ui.preferences.PreferencesFragment"-->
+<!--        android:name="be.newz.newsy.preferences.PreferencesFragment"-->
 <!--        android:label="@string/menu_preferences"-->
 <!--        tools:layout="@layout/fragment_preferences" />-->
 
     <fragment
         android:id="@+id/nav_favorites"
-        android:name="be.newz.newsy.ui.favorites.FavoritesFragment"
+        android:name="be.newz.newsy.favorites.FavoritesFragment"
         android:label="@string/menu_favorites"
         tools:layout="@layout/fragment_favorites" />
 
     <fragment
         android:id="@+id/nav_help"
-        android:name="be.newz.newsy.ui.help.HelpFragment"
+        android:name="be.newz.newsy.help.HelpFragment"
         android:label="@string/menu_help"
         tools:layout="@layout/fragment_help" />
 

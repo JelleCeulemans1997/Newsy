@@ -1,4 +1,4 @@
-package be.newz.newsy;
+package be.newz.newsy.articles;
 
 import java.util.Date;
 

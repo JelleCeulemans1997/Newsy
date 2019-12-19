@@ -1,34 +1,29 @@
-package be.newz.newsy.ui.filtered;
+package be.newz.newsy.filtered;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import java.util.List;
 
-import be.newz.newsy.Article;
-import be.newz.newsy.ArticleAdapter;
-import be.newz.newsy.DatabaseHelper;
-import be.newz.newsy.HttpReader;
-import be.newz.newsy.JsonHelper;
-import be.newz.newsy.Preference;
+import be.newz.newsy.articles.Article;
+import be.newz.newsy.articles.ArticleAdapter;
+import be.newz.newsy.articles.DatabaseHelper;
+import be.newz.newsy.articles.HttpReader;
+import be.newz.newsy.articles.JsonHelper;
+import be.newz.newsy.preferences.Preference;
 import be.newz.newsy.R;
 
 public class FilteredFragment extends Fragment {
 
-    private FilteredViewModel filteredViewModel;
     private List<Article> articles;
 
     private DatabaseHelper db;
@@ -42,8 +37,6 @@ public class FilteredFragment extends Fragment {
 
         ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("Filtered");
 
-
-        filteredViewModel = ViewModelProviders.of(this).get(FilteredViewModel.class);
         View root = inflater.inflate(R.layout.fragment_filtered, container, false);
 
         db = new DatabaseHelper(getContext());

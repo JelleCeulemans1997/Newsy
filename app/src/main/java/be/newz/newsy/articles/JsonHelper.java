@@ -1,4 +1,4 @@
-package be.newz.newsy;
+package be.newz.newsy.articles;
 
 import android.util.Log;
 
@@ -6,19 +6,15 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 
-import java.text.DateFormat;
-
 import java.util.Calendar;
-import java.util.TimeZone;
 
 import java.text.SimpleDateFormat;
+
+import be.newz.newsy.articles.Article;
 
 public class JsonHelper {
 

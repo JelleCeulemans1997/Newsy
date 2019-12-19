@@ -1,6 +1,5 @@
-package be.newz.newsy;
+package be.newz.newsy.help;
 
-import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,11 +8,12 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.github.florent37.expansionpanel.ExpansionLayout;
 import com.github.florent37.expansionpanel.viewgroup.ExpansionLayoutCollection;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import be.newz.newsy.R;
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerHolder> {
 

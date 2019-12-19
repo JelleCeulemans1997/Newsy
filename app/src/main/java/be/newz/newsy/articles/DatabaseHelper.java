@@ -1,18 +1,16 @@
-package be.newz.newsy;
+package be.newz.newsy.articles;
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.widget.ListView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
-import be.newz.newsy.ui.favorites.FavoritesFragment;
+import be.newz.newsy.articles.Article;
+import be.newz.newsy.preferences.Preference;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
     // Database Version

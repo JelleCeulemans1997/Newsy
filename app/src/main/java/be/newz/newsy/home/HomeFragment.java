@@ -1,40 +1,29 @@
-package be.newz.newsy.ui.home;
+package be.newz.newsy.home;
 
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.ImageButton;
 import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
-import be.newz.newsy.Article;
-import be.newz.newsy.ArticleAdapter;
-import be.newz.newsy.DatabaseHelper;
-import be.newz.newsy.HttpReader;
-import be.newz.newsy.JsonHelper;
-import be.newz.newsy.Preference;
+import be.newz.newsy.articles.Article;
+import be.newz.newsy.articles.ArticleAdapter;
+import be.newz.newsy.articles.DatabaseHelper;
+import be.newz.newsy.articles.HttpReader;
+import be.newz.newsy.articles.JsonHelper;
+import be.newz.newsy.preferences.Preference;
 import be.newz.newsy.R;
 
 public class HomeFragment extends Fragment {
 
-    private HomeViewModel homeViewModel;
     private List<Article> articles;
 
     private DatabaseHelper db;
@@ -50,8 +39,6 @@ public class HomeFragment extends Fragment {
 
         db = new DatabaseHelper(getContext());
 
-        homeViewModel =
-                ViewModelProviders.of(this).get(HomeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_home, container, false);
 
         getArticles(root);
@@ -63,7 +50,6 @@ public class HomeFragment extends Fragment {
         httpReader.setOnResultReadyListener(new HttpReader.OnResultReadyListener() {
             @Override
             public void resultReady(String result) {
-                Log.d("lol", result);
                 JsonHelper jsonHelper = new JsonHelper();
                 articles = jsonHelper.getArticles(result);
 

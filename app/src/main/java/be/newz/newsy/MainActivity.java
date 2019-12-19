@@ -1,6 +1,5 @@
 package be.newz.newsy;
 
-import android.app.Fragment;
 import android.os.Bundle;
 
 import android.app.FragmentManager;
@@ -22,10 +21,9 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
-import be.newz.newsy.ui.browser.BrowserFragment;
-import be.newz.newsy.ui.preferences.PreferencesFragment;
+import be.newz.newsy.browser.BrowserFragment;
+import be.newz.newsy.preferences.PreferencesFragment;
 
 public class MainActivity extends AppCompatActivity {
 

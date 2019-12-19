@@ -1,4 +1,4 @@
-package be.newz.newsy.ui.search;
+package be.newz.newsy.search;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -18,12 +18,9 @@ import androidx.fragment.app.FragmentManager;
 import com.google.android.material.textfield.TextInputEditText;
 
 import be.newz.newsy.R;
-import be.newz.newsy.ui.filtered.FilteredFragment;
+import be.newz.newsy.filtered.FilteredFragment;
 
 public class SearchFragment extends Fragment implements AdapterView.OnItemSelectedListener {
-
-    private SearchViewModel searchViewModel;
-
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {

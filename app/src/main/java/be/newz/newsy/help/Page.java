@@ -1,8 +1,4 @@
-package be.newz.newsy;
-
-import com.thoughtbot.expandablerecyclerview.models.ExpandableGroup;
-
-import java.util.List;
+package be.newz.newsy.help;
 
 public class Page {
     private String title;
@@ -15,7 +11,6 @@ public class Page {
         this.title = title;
         this.layoutFile = layoutFile;
     }
-
 
     public String getTitle() {
         return title;

@@ -1,4 +1,4 @@
-package be.newz.newsy;
+package be.newz.newsy.help;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.github.florent37.expansionpanel.ExpansionLayout;
+
+import be.newz.newsy.R;
 
 public final class RecyclerHolder extends RecyclerView.ViewHolder {
 

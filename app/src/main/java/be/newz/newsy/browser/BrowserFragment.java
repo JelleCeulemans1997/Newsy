@@ -1,4 +1,4 @@
-package be.newz.newsy.ui.browser;
+package be.newz.newsy.browser;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
