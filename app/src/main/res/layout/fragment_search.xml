@@ -44,7 +44,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/searchKeywordButton"
         app:layout_constraintBottom_toTopOf="@+id/topicsSpinner"
-        android:text="Search on topic"
+        android:text="@string/topic"
         android:layout_marginTop="50px"/>
 
     <Spinner
@@ -55,14 +55,5 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginTop="50dp"/>
-
-
-
-
-
-
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

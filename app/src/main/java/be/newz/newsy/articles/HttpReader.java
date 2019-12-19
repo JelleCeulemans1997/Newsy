@@ -14,7 +14,7 @@ import java.net.URL;
 public class HttpReader extends AsyncTask<String, Void, String> {
 
     public interface OnResultReadyListener {
-        public void resultReady(String result);
+        void resultReady(String result);
     }
 
     private OnResultReadyListener onResultReadyListener;
@@ -22,8 +22,6 @@ public class HttpReader extends AsyncTask<String, Void, String> {
     public void setOnResultReadyListener(OnResultReadyListener listener) {
         onResultReadyListener = listener;
     }
-
-    private Exception exception;
 
     protected String doInBackground(String... urls) {
         String text = null;
@@ -70,5 +68,4 @@ public class HttpReader extends AsyncTask<String, Void, String> {
     protected void onPostExecute(String result) {
         onResultReadyListener.resultReady(result);
     }
-
 }

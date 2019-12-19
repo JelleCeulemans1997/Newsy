@@ -8,7 +8,8 @@
         android:layout_height="50dp"
         android:src="@drawable/flag_belgium"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="5dp"/>
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"/>
 
     <TextView
         android:id="@+id/textviewCountry"
@@ -16,10 +17,11 @@
         android:layout_height="25dp"
         android:text="Belgium"
         android:layout_toRightOf="@+id/imageViewFlag"
-        android:layout_marginLeft="20dp"
+        android:layout_marginLeft="18dp"
         android:gravity="center"
         android:textSize="20dp"
-        android:layout_marginTop="5dp"/>
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"/>
 
     <TextView
         android:id="@+id/textviewLanguage"
@@ -30,5 +32,5 @@
         android:gravity="center"
         android:text="Dutch"
         android:textSize="10dp"
-        android:layout_marginTop="30dp"/>
+        android:layout_marginTop="33dp"/>
 </RelativeLayout>

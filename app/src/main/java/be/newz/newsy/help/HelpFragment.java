@@ -45,15 +45,6 @@ public class HelpFragment extends Fragment {
         pages.add(new Page(getResources().getString(R.string.help_authors_title), R.layout.help_authors));
 
 
-//        Button homeButton = root.findViewById(R.id.homeButton);
-//
-//        homeButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//            }
-//        });
-
         adapter.setItems(pages);
         recyclerView.setAdapter(adapter);
         return root;

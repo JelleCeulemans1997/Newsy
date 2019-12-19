@@ -32,7 +32,6 @@ public class BrowserFragment extends Fragment{
 
         ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("Browser");
 
-
         NavigationView navigationView = getActivity().findViewById(R.id.nav_view);
         for (int i = 0; i <  navigationView.getMenu().size(); i++) {
             navigationView.getMenu().getItem(i).setChecked(false);
@@ -50,9 +49,6 @@ public class BrowserFragment extends Fragment{
                 return true;
             }
         });
-
-
-
         return root;
     }
 

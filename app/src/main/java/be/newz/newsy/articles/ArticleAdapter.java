@@ -32,7 +32,7 @@ public class ArticleAdapter extends ArrayAdapter<Article> {
         LayoutInflater inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-        View rowView = inflater.inflate(R.layout.articlelistviewitem, parent, false);
+        final View rowView = inflater.inflate(R.layout.articlelistviewitem, parent, false);
 
         final TextView textViewTitel = (TextView) rowView.findViewById(R.id.title);
         final TextView textViewDatum = (TextView) rowView.findViewById(R.id.date);
@@ -68,7 +68,7 @@ public class ArticleAdapter extends ArrayAdapter<Article> {
         imageButtonShare.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String textToSend = "Lees hier het artikel: " + article.getTitle() + "  " + article.getUrl();
+                String textToSend = rowView.getResources().getString(R.string.share) + article.getTitle() + "  " + article.getUrl();
                 Intent sendIntent = new Intent();
                 sendIntent.setAction(Intent.ACTION_SEND);
                 sendIntent.putExtra(Intent.EXTRA_TEXT, textToSend);
@@ -85,9 +85,9 @@ public class ArticleAdapter extends ArrayAdapter<Article> {
                 db = new DatabaseHelper(getContext());
                 boolean inserted = db.insertArticle(article);
                 if (inserted == true) {
-                    Toast.makeText(getContext(), "Saved", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), R.string.saved, Toast.LENGTH_LONG).show();
                 } else {
-                    Toast.makeText(getContext(), "Was already saved", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), R.string.wasSaved, Toast.LENGTH_LONG).show();
                 }
             }
         });

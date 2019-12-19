@@ -54,7 +54,6 @@ public class JsonHelper {
 
                 articles.add(article);
             }
-
         } catch (JSONException e) {
             Log.e("JSON parser", "Error parsing data " + e.toString());
         }

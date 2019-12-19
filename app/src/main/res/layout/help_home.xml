@@ -8,7 +8,7 @@
         android:layout_height="wrap_content"
         android:justificationMode="inter_word"
         android:layout_margin="15dp"
-        android:text="@string/help_home"/>
+        android:text="@string/help_home_1"/>
 
 
     <TextView
@@ -16,16 +16,6 @@
         android:layout_height="wrap_content"
         android:justificationMode="inter_word"
         android:layout_margin="15dp"
-        android:text="@string/help_home"/>
-
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Go to homepage"
-        android:id="@+id/homeButton"/>
-
-
-
+        android:text="@string/help_home_2"/>
 
 </LinearLayout>

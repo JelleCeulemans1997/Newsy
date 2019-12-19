@@ -31,7 +31,6 @@ public class FavoritesFragment extends Fragment {
 
         View root = inflater.inflate(R.layout.fragment_favorites, container, false);
 
-
         db = new DatabaseHelper(getContext());
         readarticlesSQL(root);
 

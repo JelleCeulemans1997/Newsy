@@ -26,7 +26,6 @@
                 android:layout_centerVertical="true"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:text="Trip name"
                 android:textColor="#3E3E3E"
                 android:id="@+id/textViewTitle"
                 android:layout_centerHorizontal="true"/>
@@ -65,7 +64,6 @@
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:orientation="vertical">
-
         </LinearLayout>
 
     </com.github.florent37.expansionpanel.ExpansionLayout>

@@ -71,13 +71,13 @@ public class PreferencesFragment extends Fragment {
 
     private void initList() {
         countryList = new ArrayList<>();
-        countryList.add(new CountryItem("Belgium", "Dutch", R.drawable.flag_belgium, "be", "nl"));
-        countryList.add(new CountryItem("Belgium", "French", R.drawable.flag_belgium, "be", "fr"));
-        countryList.add(new CountryItem("The Netherlands", "Dutch", R.drawable.flag_netherlands, "nl", "nl"));
-        countryList.add(new CountryItem("France", "French", R.drawable.flag_france, "fr", "fr"));
-        countryList.add(new CountryItem("Germany", "German", R.drawable.flag_germany, "de", "de"));
-        countryList.add(new CountryItem("United Kingdom", "English", R.drawable.flag_uk, "uk", "en"));
-        countryList.add(new CountryItem("United States of America", "English", R.drawable.flag_us, "us", "en"));
+        countryList.add(new CountryItem(getResources().getString(R.string.preference_be_country), getResources().getString(R.string.preference_nl_language), R.drawable.flag_belgium, "be", "nl"));
+        countryList.add(new CountryItem(getResources().getString(R.string.preference_be_country), getResources().getString(R.string.preference_fr_language), R.drawable.flag_belgium, "be", "fr"));
+        countryList.add(new CountryItem(getResources().getString(R.string.preference_nl_country), getResources().getString(R.string.preference_nl_language), R.drawable.flag_netherlands, "nl", "nl"));
+        countryList.add(new CountryItem(getResources().getString(R.string.preference_fr_country), getResources().getString(R.string.preference_fr_language), R.drawable.flag_france, "fr", "fr"));
+        countryList.add(new CountryItem(getResources().getString(R.string.preference_de_country), getResources().getString(R.string.preference_de_language), R.drawable.flag_germany, "de", "de"));
+        countryList.add(new CountryItem(getResources().getString(R.string.preference_uk_country), getResources().getString(R.string.preference_en_language), R.drawable.flag_uk, "uk", "en"));
+        countryList.add(new CountryItem(getResources().getString(R.string.preference_us_country), getResources().getString(R.string.preference_en_language), R.drawable.flag_us, "us", "en"));
 
     }
 }

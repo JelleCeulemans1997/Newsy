@@ -47,8 +47,6 @@ public class FavoritesAdapter extends ArrayAdapter<Article> {
         final ImageButton imageButtonSaved = (ImageButton) rowView.findViewById(R.id.saved);
         final ImageButton imageButtonShare = rowView.findViewById(R.id.share);
 
-        Log.d("lol", values.get(position).getTitle());
-
         textViewTitel.setText(values.get(position).getTitle());
         textViewDatum.setText(values.get(position).getPublished().toString());
         buttonSource.setText(values.get(position).getSource());

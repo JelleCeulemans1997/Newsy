@@ -47,27 +47,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put("position", 0);
 
         db.insert("preference", null, values);
-
-//        String CREATE_TABLE_COUNTRY =
-//                "CREATE TABLE country (" +
-//                        "country TEXT, " +
-//                        "language TEXT, " +
-//                        "flagImage INTEGER," +
-//                        "countryValue TEXT, " +
-//                        "languageValue TEXT," +
-//                        "position INTEGER," +
-//                        "selected INTEGER DEFAULT 0)";
-//        db.execSQL(CREATE_TABLE_COUNTRY);
-
-        //insertArticle(db);
     }
-
-   /* private void insertArticle(SQLiteDatabase db) {
-        String INSERT_ARTICLE= "INSERT INTO article(title,url,published,source,sourceUrl)" +
-                "VALUES( 'Koninklijke Schenking gaat zo snel mogelijk maximaal open kaart spelen via internet','https://www.vrt.be/vrtnws/nl/2019/11/28/koninklijke-schenking-gaat-zo-snel-mogelijk-volledig-open-kaart/', " +
-                "'2019-11-28 16:30:00 UTC', 'VRT NWS','https://www.vrt.be')";
-        db.execSQL(INSERT_ARTICLE);
-    }*/
 
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS article");
@@ -106,7 +86,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
             long id = db.insert("article", null, values);
             db.close();
-           // return id;
             return true;
         }
         return false;
@@ -116,7 +95,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         List<Article> articles = getArticles();
         for (Article a: articles) {
             if (article.getUrl().equals(a.getUrl()) && article.getTitle().equals(a.getTitle()) && article.getSource().equals(a.getSource())) {
-                //article already ssaved
                 return true;
             }
         }
@@ -146,7 +124,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             }
         }
         db.close();
-        //FavoritesAdapter favoritesAdapter = new FavoritesAdapter(this, list);
     }
 
     public void clearPreferences() {
@@ -184,8 +161,4 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.close();
         return list.get(0);
     }
-
-
-
-
 }

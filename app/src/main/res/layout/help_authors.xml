@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:justificationMode="inter_word"
         android:layout_margin="15dp"
-        android:text="Dit zijn de authors van newsy"/>
+        android:text="@string/help_authors"/>
 
 
     <Button
@@ -19,7 +19,7 @@
         android:background="@android:color/transparent"
         android:textColor="@color/colorPrimary"
         android:tag="http://emmybruynseels.be/"
-        android:text="Emmy Bruynseels"
+        android:text="@string/emmy_bruynseels"
         android:onClick="goToPage"
         />
 
@@ -30,7 +30,7 @@
         android:background="@android:color/transparent"
         android:textColor="@color/colorPrimary"
         android:tag="https://jelleceulemans.be/"
-        android:text="Jelle Ceulemans"
+        android:text="@string/jelle_ceulemans"
         android:onClick="goToPage"
         />
 

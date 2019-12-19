@@ -30,13 +30,31 @@
     <string name="keyword">Zoeken op trefwoord</string>
     <string name="search">Zoeken</string>
     <string name="help_home_title">Start</string>
-    <string name="help_home">Op de homepage wordt al het top nieuws geladen. De taal en landkeuze van het topnieuws kan worden aangepast bij de settings. Zo wordt enkel het topnieuws weergegeven dat voor de gebruiker van toepassing is</string>
+    <string name="help_home_1">Op de homepagina wordt er bij het opstarten van de app 10 top nieuwtjes getoond. Welke top nieuwtjes er getoond worden is afhankelijk van de instellingen, meer hierover in het instellingen gedeelte.</string>
+    <string name="help_home_2">Bij elk nieuwtje zie je de titel van het artikel, de naam van de bron en de datum met tijdstip wanneer het artikel geplaatst is. Aan elk nieuwtje zijn enkele acties aan verbonden. Zo is het mogelijk om de website te openen van de bron door op zijn naam te drukken. Door op de wereldbol te drukken wordt je genavigeerd naar de pagina waar het artikel te lezen is. Door te drukken op het hartje slaag je het zoekertje op bij je favorieten zodat je dit nooit meer kwijt speelt. Door op het deel icoon te drukken (3 verbonden bolletjes) is het mogelijk om je zoekertje te delen via een gewenst medium zoals facebook of whatsapp.</string>
     <string name="help_search_title">Zoeken</string>
     <string name="help_search">Via de zoekoptie kan de gebruiker artikels met een zelf gekozen sleutelwoord of filteren op categorie</string>
     <string name="help_favorites_title">Favorites</string>
     <string name="help_favorites">favorites content</string>
     <string name="help_settings_title">Settings</string>
     <string name="help_settings">settings content</string>
-    <string name="help_authors_title">Authors</string>
+    <string name="help_authors_title">Auteurs</string>
     <string name="help_authors">authors content</string>
+
+    <string name="preference_be_country">België</string>
+    <string name="preference_nl_country">Nederland</string>
+    <string name="preference_nl_language">Nederlands</string>
+    <string name="preference_fr_country">Frankrijk</string>
+    <string name="preference_fr_language">Frans</string>
+    <string name="preference_de_country">Duitsland</string>
+    <string name="preference_de_language">Duits</string>
+    <string name="preference_uk_country">Verenigd Koninkrijk</string>
+    <string name="preference_en_language">Engels</string>
+    <string name="preference_us_country">Verenigde Staten van Amerika</string>
+
+
+    <string name="share">Lees hier het artikel</string>
+    <string name="saved">Opgeslagen!</string>
+    <string name="wasSaved">Was alreeds opgeslagen!</string>
+    <string name="topic">Search on topic</string>
 </resources>
