@@ -51,5 +51,4 @@ public class BrowserFragment extends Fragment{
         });
         return root;
     }
-
 }

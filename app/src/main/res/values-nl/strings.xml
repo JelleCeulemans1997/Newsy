@@ -39,7 +39,7 @@
     <string name="help_settings_title">Settings</string>
     <string name="help_settings">settings content</string>
     <string name="help_authors_title">Auteurs</string>
-    <string name="help_authors">authors content</string>
+    <string name="help_authors">Dit zijn de auters van Newsy:</string>
 
     <string name="preference_be_country">België</string>
     <string name="preference_nl_country">Nederland</string>

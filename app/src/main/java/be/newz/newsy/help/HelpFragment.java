@@ -29,6 +29,7 @@ public class HelpFragment extends Fragment {
         }
 
         ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("Help");
+
         View root = inflater.inflate(R.layout.fragment_help, container, false);
 
         recyclerView = root.findViewById(R.id.recyclerView);
@@ -38,16 +39,14 @@ public class HelpFragment extends Fragment {
 
         List<Page> pages = new ArrayList<>();
 
-        pages.add(new Page(getResources().getString(R.string.help_home_title), R.layout.help_home));
-        pages.add(new Page(getResources().getString(R.string.help_search_title), R.layout.help_search));
-        pages.add(new Page(getResources().getString(R.string.help_favorites_title), R.layout.help_favorites));
-        pages.add(new Page(getResources().getString(R.string.help_settings_title), R.layout.help_settings));
-        pages.add(new Page(getResources().getString(R.string.help_authors_title), R.layout.help_authors));
-
+        pages.add(new Page(getResources().getString(R.string.help_home_title), R.layout.help_home, R.drawable.home, R.color.colorButtonBrowser));
+        pages.add(new Page(getResources().getString(R.string.help_search_title), R.layout.help_search, R.drawable.ic_menu_search, R.color.colorButtonBrowser));
+        pages.add(new Page(getResources().getString(R.string.help_favorites_title), R.layout.help_favorites, R.drawable.heart, R.color.colorButtonBrowser));
+        pages.add(new Page(getResources().getString(R.string.help_settings_title), R.layout.help_settings,  R.drawable.ic_menu_manage, R.color.colorButtonBrowser));
+        pages.add(new Page(getResources().getString(R.string.help_authors_title), R.layout.help_authors, R.drawable.people, R.color.colorButtonBrowser));
 
         adapter.setItems(pages);
         recyclerView.setAdapter(adapter);
         return root;
-
     }
 }
