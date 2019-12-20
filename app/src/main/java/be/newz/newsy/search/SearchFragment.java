@@ -44,8 +44,8 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemSelect
         searchKeywordButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String keyword = keywordTextInputEditText.getText().toString();
-                if (keyword.equals("")) {
+                String keyword =  keywordTextInputEditText.getText().toString();
+                if (!keyword.equals("")) {
                     startFilteredFragment(keyword, 0);
                 } else {
                     Toast.makeText(getContext(), R.string.toast_empty, Toast.LENGTH_LONG).show();

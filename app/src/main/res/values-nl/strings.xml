@@ -69,7 +69,7 @@
     <string name="toolbar_browser">Browser</string>
     <string name="toolbar_filtered">Gefilterde nieuwtjes</string>
 
-    <string name="toast_empty">Vul het tekst veld in!</string>
+    <string name="toast_empty">Vul een zoekterm in!</string>
     <string name="toast_failed_fetching">Ophalen van de artikels is niet gelukt</string>
     <string name="toast_internet">Geen internet connectie!</string>
 

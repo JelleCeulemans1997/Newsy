@@ -68,7 +68,7 @@
     <string name="toolbar_browser">Navigateur</string>
     <string name="toolbar_filtered">Nouvelles filtrée</string>
 
-    <string name="toast_empty">"Fill in the text field!"</string>
-    <string name="toast_failed_fetching">Ophalen van de artikels is niet gelukt</string>
-    <string name="toast_internet">Geen internet connectie!</string>
+    <string name="toast_empty">Entrez un terme de recherche!</string>
+    <string name="toast_failed_fetching">Ramasser de les artikels a échoué</string>
+    <string name="toast_internet">Pas de connexion Internet!</string>
 </resources>
