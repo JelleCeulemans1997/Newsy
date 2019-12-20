@@ -18,7 +18,6 @@ public class BrowserFragment extends Fragment{
 
     private WebView webView;
 
-
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_browser, container, false);

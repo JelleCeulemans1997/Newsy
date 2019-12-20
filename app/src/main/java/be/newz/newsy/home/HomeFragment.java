@@ -4,20 +4,15 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProviders;
-
 import java.util.List;
-
 import be.newz.newsy.articles.Article;
 import be.newz.newsy.articles.ArticleAdapter;
 import be.newz.newsy.articles.DatabaseHelper;
@@ -53,7 +48,7 @@ public class HomeFragment extends Fragment {
         httpReader.setOnResultReadyListener(new HttpReader.OnResultReadyListener() {
             @Override
             public void resultReady(String result) {
-                NetworkInfo info = (NetworkInfo) ((ConnectivityManager) getContext().getSystemService(Context.CONNECTIVITY_SERVICE)).getActiveNetworkInfo();
+                NetworkInfo info = ((ConnectivityManager) getContext().getSystemService(Context.CONNECTIVITY_SERVICE)).getActiveNetworkInfo();
                 if (info != null) {
                     JsonHelper jsonHelper = new JsonHelper();
                     articles = jsonHelper.getArticles(result);
@@ -71,8 +66,8 @@ public class HomeFragment extends Fragment {
         String country = preference.getCountry();
         String language = preference.getLanguage();
 
-        httpReader.execute("https://gnews.io/api/v3/top-news?country="+country+"&lang="+language+"&token=74d66a7eec0a38cd21e8f7c48652c021");
-//        74d66a7eec0a38cd21e8f7c48652c021
+        //74d66a7eec0a38cd21e8f7c48652c021
         //f8437c31cb1a27be78ccbd616bc732ec
+        httpReader.execute("https://gnews.io/api/v3/top-news?country="+country+"&lang="+language+"&token=74d66a7eec0a38cd21e8f7c48652c021");
     }
 }

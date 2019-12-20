@@ -3,25 +3,18 @@ package be.newz.newsy;
 import android.os.Bundle;
 
 import android.app.FragmentManager;
-
-import androidx.fragment.app.FragmentActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 import 	android.app.FragmentTransaction;
-
 import com.google.android.material.navigation.NavigationView;
-
 import androidx.drawerlayout.widget.DrawerLayout;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-
 import be.newz.newsy.browser.BrowserFragment;
 import be.newz.newsy.preferences.PreferencesFragment;
 
@@ -85,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
         Bundle bundle = new Bundle();
         bundle.putString("url", view.getTag().toString());
         browserFragment.setArguments(bundle);
-        ((FragmentActivity) this).getFragmentManager().beginTransaction()
+        this.getFragmentManager().beginTransaction()
                 .replace(R.id.nav_host_fragment, browserFragment)
                 .commit();
     }

@@ -6,14 +6,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Spinner;
-
 import androidx.annotation.NonNull;
 import android.app.Fragment;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import java.util.ArrayList;
-
 import be.newz.newsy.articles.DatabaseHelper;
 import be.newz.newsy.R;
 
@@ -33,18 +29,12 @@ public class PreferencesFragment extends Fragment {
         }
 
         ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle(R.string.toolbar_settings);
-
         db = new DatabaseHelper(getContext());
-
         View root = inflater.inflate(R.layout.fragment_preferences, container, false);
-
         initList();
-
         Spinner spinnerCountries = root.findViewById((R.id.spinner_countries));
-
         countryAdapter = new CountryAdapter(getContext(), countryList);
         spinnerCountries.setAdapter(countryAdapter);
-
         spinnerCountries.setSelection(db.getPreference().getPosition());
         spinnerCountries.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -65,7 +55,6 @@ public class PreferencesFragment extends Fragment {
                 return;
             }
         });
-
         return root;
     }
 
@@ -78,6 +67,5 @@ public class PreferencesFragment extends Fragment {
         countryList.add(new CountryItem(getResources().getString(R.string.preference_de_country), getResources().getString(R.string.preference_de_language), R.drawable.flag_germany, "de", "de"));
         countryList.add(new CountryItem(getResources().getString(R.string.preference_uk_country), getResources().getString(R.string.preference_en_language), R.drawable.flag_uk, "uk", "en"));
         countryList.add(new CountryItem(getResources().getString(R.string.preference_us_country), getResources().getString(R.string.preference_en_language), R.drawable.flag_us, "us", "en"));
-
     }
 }

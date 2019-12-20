@@ -9,14 +9,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProviders;
-
 import java.util.List;
-
 import be.newz.newsy.articles.Article;
 import be.newz.newsy.articles.ArticleAdapter;
 import be.newz.newsy.articles.DatabaseHelper;
@@ -68,14 +64,6 @@ public class FilteredFragment extends Fragment {
 
         return root;
     }
-
-//    public void searhWithKeyword(String keyword) {
-//        Toast.makeText(getContext(), keyword, Toast.LENGTH_LONG).show();
-//    }
-//
-//    public void searchOnTopic(String topic) {
-//        Toast.makeText(getContext(), topic, Toast.LENGTH_LONG).show();
-//    }
 
     public void getArticles(final View root, String url) {
         HttpReader httpReader = new HttpReader();

@@ -40,7 +40,7 @@ public class FavoritesFragment extends Fragment {
     public void readarticlesSQL (final View root) {
         List<Article> articles = db.getArticles();
 
-        ListView listViewArtikels = (ListView) root.findViewById(R.id.listViewArticles);
+        ListView listViewArtikels = root.findViewById(R.id.listViewArticles);
         FavoritesAdapter favoritesAdapter = new FavoritesAdapter(getContext(), articles);
         listViewArtikels.setAdapter(favoritesAdapter);
     }

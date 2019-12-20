@@ -8,15 +8,11 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-
-
 import com.google.android.material.textfield.TextInputEditText;
-
 import be.newz.newsy.R;
 import be.newz.newsy.filtered.FilteredFragment;
 
@@ -62,7 +58,6 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemSelect
 
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
-
     }
 
     private void startFilteredFragment(String keyword, int search) {

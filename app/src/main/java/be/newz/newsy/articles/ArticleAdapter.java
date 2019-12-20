@@ -34,16 +34,16 @@ public class ArticleAdapter extends ArrayAdapter<Article> {
 
         final View rowView = inflater.inflate(R.layout.articlelistviewitem, parent, false);
 
-        final TextView textViewTitel = (TextView) rowView.findViewById(R.id.title);
-        final TextView textViewDatum = (TextView) rowView.findViewById(R.id.date);
-        final Button buttonSource = (Button) rowView.findViewById(R.id.source);
+        final TextView textViewTitel = rowView.findViewById(R.id.title);
+        final TextView textViewDatum = rowView.findViewById(R.id.date);
+        final Button buttonSource = rowView.findViewById(R.id.source);
 
         final ImageButton imageButtonBrowser = rowView.findViewById(R.id.browser);
-        final ImageButton imageButtonSaved = (ImageButton) rowView.findViewById(R.id.saved);
+        final ImageButton imageButtonSaved = rowView.findViewById(R.id.saved);
         final ImageButton imageButtonShare = rowView.findViewById(R.id.share);
 
         textViewTitel.setText(values.get(position).getTitle());
-        textViewDatum.setText(values.get(position).getPublished().toString());
+        textViewDatum.setText(values.get(position).getPublished());
         buttonSource.setText(values.get(position).getSource());
         buttonSource.setTag(values.get(position).getSourceUrl());
 
@@ -91,7 +91,6 @@ public class ArticleAdapter extends ArrayAdapter<Article> {
                 }
             }
         });
-
         return rowView;
     }
 

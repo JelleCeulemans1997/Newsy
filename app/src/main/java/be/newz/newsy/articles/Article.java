@@ -1,7 +1,5 @@
 package be.newz.newsy.articles;
 
-import java.util.Date;
-
 public class Article {
     private String title;
     private String url;
