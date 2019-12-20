@@ -67,4 +67,8 @@
     <string name="toolbar_settings">Préférences</string>
     <string name="toolbar_browser">Navigateur</string>
     <string name="toolbar_filtered">Nouvelles filtrée</string>
+
+    <string name="toast_empty">"Fill in the text field!"</string>
+    <string name="toast_failed_fetching">Ophalen van de artikels is niet gelukt</string>
+    <string name="toast_internet">Geen internet connectie!</string>
 </resources>

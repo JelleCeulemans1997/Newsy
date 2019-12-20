@@ -66,4 +66,8 @@
     <string name="toolbar_browser">Browser</string>
     <string name="toolbar_filtered">Filtered news</string>
 
+    <string name="toast_empty">"Fill in the text field!"</string>
+    <string name="toast_failed_fetching">Fetching articles failed</string>
+    <string name="toast_internet">No internet connection</string>
+
 </resources>

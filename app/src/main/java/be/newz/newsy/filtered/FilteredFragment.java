@@ -57,7 +57,7 @@ public class FilteredFragment extends Fragment {
                 String url = "https://gnews.io/api/v3/topics/"+ keyword +"?country="+country+"&lang="+language+"&token=74d66a7eec0a38cd21e8f7c48652c021";
                 getArticles(root, url);
             } else {
-                Toast.makeText(getContext(), "ERROR ERROR ERROR", Toast.LENGTH_LONG).show();
+                Toast.makeText(getContext(), R.string.toast_failed_fetching, Toast.LENGTH_LONG).show();
             }
         }
 
@@ -70,7 +70,7 @@ public class FilteredFragment extends Fragment {
         httpReader.setOnResultReadyListener(new HttpReader.OnResultReadyListener() {
             @Override
             public void resultReady(String result) {
-                NetworkInfo info = (NetworkInfo)((ConnectivityManager) getContext().getSystemService(Context.CONNECTIVITY_SERVICE)).getActiveNetworkInfo();
+                NetworkInfo info = ((ConnectivityManager) getContext().getSystemService(Context.CONNECTIVITY_SERVICE)).getActiveNetworkInfo();
                if (info != null) {
                    JsonHelper jsonHelper = new JsonHelper();
                    articles = jsonHelper.getArticles(result);
@@ -79,7 +79,7 @@ public class FilteredFragment extends Fragment {
                    ArticleAdapter artikelAdapter = new ArticleAdapter(getContext(), articles);
                    listViewArticles.setAdapter(artikelAdapter);
                } else {
-                   Toast.makeText(getContext(), "No internet connection!", Toast.LENGTH_LONG).show();
+                   Toast.makeText(getContext(), R.string.toast_internet, Toast.LENGTH_LONG).show();
                }
             }
         });

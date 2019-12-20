@@ -8,6 +8,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -42,7 +44,13 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemSelect
         searchKeywordButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startFilteredFragment(keywordTextInputEditText.getText().toString(), 0);
+                String keyword = keywordTextInputEditText.getText().toString();
+                if (keyword.equals("")) {
+                    startFilteredFragment(keyword, 0);
+                } else {
+                    Toast.makeText(getContext(), R.string.toast_empty, Toast.LENGTH_LONG).show();
+                }
+
             }
         });
         return root;

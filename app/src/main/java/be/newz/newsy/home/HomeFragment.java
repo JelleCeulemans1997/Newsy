@@ -57,7 +57,7 @@ public class HomeFragment extends Fragment {
                     ArticleAdapter artikelAdapter = new ArticleAdapter(getContext(), articles);
                     listViewArtikels.setAdapter(artikelAdapter);
                 } else {
-                    Toast.makeText(getContext(), "No internet connection!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getContext(), R.string.toast_internet, Toast.LENGTH_LONG).show();
                 }
             }
         });
