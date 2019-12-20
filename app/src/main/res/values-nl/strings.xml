@@ -36,7 +36,7 @@
     <string name="help_search">Op de zoekpagine kan de gebruikers nieuwsberichten gaan zoeken. Dit kan met een trefwoord of gaan zoeken op categorie. Deze categorieën zijn: wereld, natie, zakelijk, technologien, entertainment, sporten, wetenschap en gezondheid.</string>
     <string name="help_favorites_title">Favorites</string>
     <string name="help_favorites">Op de favoriete pagina kan de user al zijn opgeslagen zoekertjes bekijken die men heeft aangeduid bij de top nieuwtjes of op de gefilterde pagina. De zoekertjes zien er helaam hetzelfde uit als ook dezelfde functionaliteit, behalve dat de knop om ze op te slagen bij favorieten vervangen is door een verwijder knop om deze uit de favorieten lijst te halen.</string>
-    <string name="help_settings_title">Settings</string>
+    <string name="help_settings_title">Instellingen</string>
     <string name="help_settings">De instellingspagina is toegankelijk via de 3 bolletjes recht boven op de toolbar. Op de instellingspagina kan de taal en landkeuze worden ingesteld. Er is keuze uit België-Nederlands, Beglië-Frans, Nederland-Nederlands, Frankrijk-Frans, Duitsland-Duits, Verenigd Koninkrijk-Engels en VerenigdeStaten van Amerika-Engels.</string>
     <string name="help_authors_title">Auteurs</string>
     <string name="help_authors">Dit zijn de auters van Newsy:</string>
