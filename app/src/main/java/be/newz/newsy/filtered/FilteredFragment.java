@@ -1,5 +1,8 @@
 package be.newz.newsy.filtered;
 
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -66,25 +69,30 @@ public class FilteredFragment extends Fragment {
         return root;
     }
 
-    public void searhWithKeyword(String keyword) {
-        Toast.makeText(getContext(), keyword, Toast.LENGTH_LONG).show();
-    }
-
-    public void searchOnTopic(String topic) {
-        Toast.makeText(getContext(), topic, Toast.LENGTH_LONG).show();
-    }
+//    public void searhWithKeyword(String keyword) {
+//        Toast.makeText(getContext(), keyword, Toast.LENGTH_LONG).show();
+//    }
+//
+//    public void searchOnTopic(String topic) {
+//        Toast.makeText(getContext(), topic, Toast.LENGTH_LONG).show();
+//    }
 
     public void getArticles(final View root, String url) {
         HttpReader httpReader = new HttpReader();
         httpReader.setOnResultReadyListener(new HttpReader.OnResultReadyListener() {
             @Override
             public void resultReady(String result) {
-                JsonHelper jsonHelper = new JsonHelper();
-                articles = jsonHelper.getArticles(result);
+                NetworkInfo info = (NetworkInfo)((ConnectivityManager) getContext().getSystemService(Context.CONNECTIVITY_SERVICE)).getActiveNetworkInfo();
+               if (info != null) {
+                   JsonHelper jsonHelper = new JsonHelper();
+                   articles = jsonHelper.getArticles(result);
 
-                final ListView listViewArticles = (ListView) root.findViewById(R.id.listViewArticles);
-                ArticleAdapter artikelAdapter = new ArticleAdapter(getContext(), articles);
-                listViewArticles.setAdapter(artikelAdapter);
+                   final ListView listViewArticles = (ListView) root.findViewById(R.id.listViewArticles);
+                   ArticleAdapter artikelAdapter = new ArticleAdapter(getContext(), articles);
+                   listViewArticles.setAdapter(artikelAdapter);
+               } else {
+                   Toast.makeText(getContext(), "No internet connection!", Toast.LENGTH_LONG).show();
+               }
             }
         });
         httpReader.execute(url);

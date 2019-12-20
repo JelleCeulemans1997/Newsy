@@ -24,9 +24,6 @@ public class JsonHelper {
         try {
             JSONObject jsonObject = new JSONObject(jsonTekst);
             JSONArray jsonArrayArticles = jsonObject.getJSONArray("articles");
-            //FIXME
-            //Error when the device's internet connection is turned off!
-            //Show popup when the app is booting and the internet connectivity is turned off (not before this part, but before executing newsy code)
             for (int i = 0; i < jsonArrayArticles.length(); i++) {
                 JSONObject jsonObjectArticle = jsonArrayArticles.getJSONObject(i);
                 Article article = new Article();
@@ -34,15 +31,15 @@ public class JsonHelper {
                 article.setUrl(jsonObjectArticle.getString("url"));
 
                 String datum = jsonObjectArticle.getString("publishedAt");
-                int year = Integer.parseInt(datum.substring(0,4));
-                int month = Integer.parseInt(datum.substring(5,7));
-                int day = Integer.parseInt(datum.substring(8,10));
-                int hours = Integer.parseInt(datum.substring(11,13));
-                int minutes = Integer.parseInt(datum.substring(14,16));
+                int year = Integer.parseInt(datum.substring(0, 4));
+                int month = Integer.parseInt(datum.substring(5, 7));
+                int day = Integer.parseInt(datum.substring(8, 10));
+                int hours = Integer.parseInt(datum.substring(11, 13));
+                int minutes = Integer.parseInt(datum.substring(14, 16));
                 int seconds = Integer.parseInt(datum.substring(17, 19));
 
                 Calendar c = Calendar.getInstance();
-                c.set(year, month -1, day, hours, minutes, seconds);
+                c.set(year, month - 1, day, hours, minutes, seconds);
                 SimpleDateFormat sdf = new SimpleDateFormat("dd MMMM yyyy HH:mm:ss");
 
 
@@ -54,6 +51,7 @@ public class JsonHelper {
 
                 articles.add(article);
             }
+
         } catch (JSONException e) {
             Log.e("JSON parser", "Error parsing data " + e.toString());
         }
