@@ -72,7 +72,6 @@
                     android:id="@+id/share"
                     android:layout_weight="1"
                     android:tint="@color/colorButtonShare"/>
-
             </LinearLayout>
 
         </LinearLayout>

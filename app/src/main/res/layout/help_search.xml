@@ -9,6 +9,6 @@
         android:layout_height="wrap_content"
         android:justificationMode="inter_word"
         android:layout_margin="15dp"
-        android:text="HOME SEARCH CON?EENE?ENENENENENEENENENEENENENENENEE"/>
+        android:text="@string/help_search"/>
 
 </LinearLayout>

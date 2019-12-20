@@ -29,4 +29,31 @@
     </string-array>
     <string name="title_activity_start">Newsy</string>
     <string name="menu_help">Aide</string>
+    <string name="help_home_title">Home</string>
+    <string name="help_home_1">zffz</string>
+    <string name="help_home_2">zfzf</string>
+    <string name="help_search_title">Zoeken</string>
+    <string name="help_search">Via de zoekoptie kan de gebruiker artikels met een zelf gekozen sleutelwoord of filteren op categorie</string>
+    <string name="help_favorites_title">Favorites</string>
+    <string name="help_favorites">favorites content</string>
+    <string name="help_settings_title">Settings</string>
+    <string name="help_settings">settings content</string>
+    <string name="help_authors_title">Authors</string>
+    <string name="help_authors">authors content</string>
+
+    <string name="preference_be_country">Belgium</string>
+    <string name="preference_nl_country">The Netherlands</string>
+    <string name="preference_nl_language">Dutch</string>
+    <string name="preference_fr_country">France</string>
+    <string name="preference_fr_language">French</string>
+    <string name="preference_de_country">Germany</string>
+    <string name="preference_de_language">German</string>
+    <string name="preference_uk_country">United Kingdom</string>
+    <string name="preference_en_language">English</string>
+    <string name="preference_us_country">United States of America</string>
+
+    <string name="share">Lees hier het artikel</string>
+    <string name="saved">Saved</string>
+    <string name="wasSaved">Was already saved!</string>
+    <string name="topic">Search on topic</string>
 </resources>
