@@ -52,7 +52,7 @@
     <string name="preference_en_language">Engels</string>
     <string name="preference_us_country">Verenigde Staten van Amerika</string>
 
-    <string name="share">Lees hier het artikel</string>
+    <string name="share">Lees hier het artikel: </string>
     <string name="saved">Opgeslagen!</string>
     <string name="wasSaved">Was alreeds opgeslagen!</string>
     <string name="topic">Zoeken op categorie</string>

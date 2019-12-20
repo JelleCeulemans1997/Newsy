@@ -51,7 +51,7 @@
     <string name="preference_en_language">English</string>
     <string name="preference_us_country">United States of America</string>
 
-    <string name="share">Lees hier het artikel</string>
+    <string name="share">Read the article: </string>
     <string name="saved">Saved</string>
     <string name="wasSaved">Was already saved!</string>
     <string name="topic">Search on topic</string>

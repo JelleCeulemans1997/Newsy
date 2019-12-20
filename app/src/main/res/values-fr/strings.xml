@@ -52,7 +52,7 @@
     <string name="preference_en_language">anglais</string>
     <string name="preference_us_country">états-unis d\'amérique</string>
 
-    <string name="share">Lire l\'article</string>
+    <string name="share">Lire l\'article: </string>
     <string name="saved">enregistré</string>
     <string name="wasSaved">déjà enregistré!</string>
     <string name="topic">recherche sur le sujet</string>
