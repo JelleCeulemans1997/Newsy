@@ -38,7 +38,7 @@ public class FilteredFragment extends Fragment {
             container.removeAllViews();
         }
 
-        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("Filtered");
+        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle(R.string.toolbar_filtered);
 
         View root = inflater.inflate(R.layout.fragment_filtered, container, false);
 

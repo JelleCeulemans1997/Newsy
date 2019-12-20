@@ -28,7 +28,7 @@ public class HelpFragment extends Fragment {
             container.removeAllViews();
         }
 
-        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("Help");
+        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle(R.string.toolbar_help);
 
         View root = inflater.inflate(R.layout.fragment_help, container, false);
 

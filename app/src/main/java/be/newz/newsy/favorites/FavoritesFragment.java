@@ -27,7 +27,7 @@ public class FavoritesFragment extends Fragment {
             container.removeAllViews();
         }
 
-        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("Favorites");
+        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle(R.string.toolbar_favorites);
 
         View root = inflater.inflate(R.layout.fragment_favorites, container, false);
 

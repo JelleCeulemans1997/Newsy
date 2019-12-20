@@ -22,6 +22,8 @@ import be.newz.newsy.filtered.FilteredFragment;
 
 public class SearchFragment extends Fragment implements AdapterView.OnItemSelectedListener {
 
+    private String[] searchItems = { "choose", "world", "nation", "business", "technology", "entertainment", "sports", "science", "health" };
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
@@ -29,9 +31,8 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemSelect
             container.removeAllViews();
         }
 
-        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("Search");
+        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle(R.string.toolbar_search);
 
-        //searchViewModel = ViewModelProviders.of(this).get(BrowserViewModel.class);
         View root = inflater.inflate(R.layout.fragment_search, container, false);
 
         final TextInputEditText keywordTextInputEditText = root.findViewById(R.id.keywordTextInputEditText);
@@ -53,8 +54,7 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemSelect
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-        //redirect or no redirect
-        String topic = adapterView.getItemAtPosition(i).toString().toLowerCase();
+        String topic = searchItems[i];
         if (!topic.equals("choose")) {
             startFilteredFragment(topic, 1);
         }

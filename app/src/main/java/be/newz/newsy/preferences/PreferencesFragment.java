@@ -32,7 +32,7 @@ public class PreferencesFragment extends Fragment {
             container.removeAllViews();
         }
 
-        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("Preferences");
+        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle(R.string.toolbar_settings);
 
         db = new DatabaseHelper(getContext());
 

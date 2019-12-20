@@ -30,7 +30,7 @@ public class BrowserFragment extends Fragment{
         Bundle bundle = getArguments();
         String url = bundle.getString("url");
 
-        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("Browser");
+        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle(R.string.toolbar_browser);
 
         NavigationView navigationView = getActivity().findViewById(R.id.nav_view);
         for (int i = 0; i <  navigationView.getMenu().size(); i++) {
