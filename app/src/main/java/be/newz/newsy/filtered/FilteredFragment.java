@@ -54,11 +54,11 @@ public class FilteredFragment extends Fragment {
             String keyword = bundle.getString("keyword");
 
             if (search == 0) {
-                String url = "https://gnews.io/api/v3/search?q="+ keyword +"&country="+country+"&lang="+language+"&token=f8437c31cb1a27be78ccbd616bc732ec";
+                String url = "https://gnews.io/api/v3/search?q="+ keyword +"&country="+country+"&lang="+language+"&token=74d66a7eec0a38cd21e8f7c48652c021";
                 getArticles(root, url);
             }
             else if (search == 1) {
-                String url = "https://gnews.io/api/v3/topics/"+ keyword +"?country="+country+"&lang="+language+"&token=f8437c31cb1a27be78ccbd616bc732ec";
+                String url = "https://gnews.io/api/v3/topics/"+ keyword +"?country="+country+"&lang="+language+"&token=74d66a7eec0a38cd21e8f7c48652c021";
                 getArticles(root, url);
             } else {
                 Toast.makeText(getContext(), "ERROR ERROR ERROR", Toast.LENGTH_LONG).show();

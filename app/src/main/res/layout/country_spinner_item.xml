@@ -18,10 +18,11 @@
         android:text="Belgium"
         android:layout_toRightOf="@+id/imageViewFlag"
         android:layout_marginLeft="18dp"
+        android:layout_marginRight="10dp"
         android:gravity="center"
-        android:textSize="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="10dp"/>
+        android:textSize="18dp"
+
+        android:layout_marginTop="8dp"/>
 
     <TextView
         android:id="@+id/textviewLanguage"
@@ -30,7 +31,8 @@
         android:layout_marginLeft="20dp"
         android:layout_toRightOf="@+id/imageViewFlag"
         android:gravity="center"
+        android:textStyle="italic"
         android:text="Dutch"
-        android:textSize="10dp"
-        android:layout_marginTop="33dp"/>
+        android:textSize="13dp"
+        android:layout_marginTop="30dp"/>
 </RelativeLayout>
