@@ -39,7 +39,7 @@
     <string name="help_settings_title">Instellingen</string>
     <string name="help_settings">De instellingspagina is toegankelijk via de 3 bolletjes rechts boven op de toolbar. Op de instellingspagina kan de taal en landkeuze worden ingesteld. Er is keuze uit België-Nederlands, België-Frans, Nederland-Nederlands, Frankrijk-Frans, Duitsland-Duits, Verenigd Koninkrijk-Engels en Verenigde Staten van Amerika-Engels.</string>
     <string name="help_authors_title">Auteurs</string>
-    <string name="help_authors">Dit zijn de auters van Newsy:</string>
+    <string name="help_authors">Dit zijn de auteurs van Newsy:</string>
 
     <string name="preference_be_country">België</string>
     <string name="preference_nl_country">Nederland</string>
@@ -68,7 +68,5 @@
     <string name="toolbar_settings">Instellingen</string>
     <string name="toolbar_browser">Browser</string>
     <string name="toolbar_filtered">Gefilterde nieuwtjes</string>
-
-
 
 </resources>

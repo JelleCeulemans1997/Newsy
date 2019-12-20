@@ -71,6 +71,8 @@ public class HomeFragment extends Fragment {
         String country = preference.getCountry();
         String language = preference.getLanguage();
 
-        httpReader.execute("https://gnews.io/api/v3/top-news?country="+country+"&lang="+language+"&token=f8437c31cb1a27be78ccbd616bc732ec");
+        httpReader.execute("https://gnews.io/api/v3/top-news?country="+country+"&lang="+language+"&token=74d66a7eec0a38cd21e8f7c48652c021");
+//        74d66a7eec0a38cd21e8f7c48652c021
+        //f8437c31cb1a27be78ccbd616bc732ec
     }
 }
