@@ -39,7 +39,7 @@ public class HomeFragment extends Fragment {
             container.removeAllViews();
         }
 
-        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("Home");
+        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle(R.string.toolbar_home);
 
         db = new DatabaseHelper(getContext());
 

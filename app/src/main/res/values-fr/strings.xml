@@ -15,7 +15,6 @@
     <string name="keyword">" recherche par mot-clé"</string>
     <string name="search">Chercher</string>
 
-
     <string-array name="topics">
         <item><i>Choose</i></item>
         <item>World</item>
@@ -56,4 +55,15 @@
     <string name="saved">Saved</string>
     <string name="wasSaved">Was already saved!</string>
     <string name="topic">Search on topic</string>
+
+    <string name="emmy_bruynseels">Emmy Bruynseels</string>
+    <string name="jelle_ceulemans">Jelle Ceulemans</string>
+
+    <string name="toolbar_home">Home</string>
+    <string name="toolbar_search">Zoeken</string>
+    <string name="toolbar_favorites">Favorieten</string>
+    <string name="toolbar_help">Help</string>
+    <string name="toolbar_settings">Instellingen</string>
+    <string name="toolbar_browser">Browser</string>
+    <string name="toolbar_filtered">Gefilterde nieuwtjes</string>
 </resources>
